@@ -1,0 +1,257 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="着色器加载 - Unity 手册">
+<title>着色器加载 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="默认情况下，Unity 的运行时着色器加载行为如下：">
+<meta property="og:description" content="默认情况下，Unity 的运行时着色器加载行为如下：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'shader-loading';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/shader-loading.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/shader-loading.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/shader-loading.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/shader-loading.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/shader-loading.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/shader-loading.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/shader-loading.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/shader-loading.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-loading.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-loading.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-loading.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-loading.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-loading.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-loading.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-loading.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-loading.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-loading.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-loading.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-loading.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-loading.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-loading.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-loading.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-loading.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-loading.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-loading.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-loading.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-loading.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-loading.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/shader-loading.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/shader-loading.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/shader-loading.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/shader-loading.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/shader-loading.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/shader-loading.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-loading.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-loading.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-loading.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-loading.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-loading.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-loading.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-loading.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-loading.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-loading.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-loading.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-loading.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-loading.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-loading.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-loading.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-loading.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-loading.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-loading.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-loading.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-loading.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-loading.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="ShadersOverview.html">着色器核心概念</a></li>
+<li>着色器加载</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-variant-collections.html"></a></span><div class="tip">着色器变体集合</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderReplacement.html"></a></span><div class="tip"> 在运行时替换着色器</div>
+</div>
+</div></div>
+<h1>着色器加载</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>默认情况下，Unity 的运行时着色器加载行为如下：</p>
+
+<p>1.当 Unity <a href="scenes-working-with.html">加载场景</a>或使用<a href="LoadingResourcesatRuntime.html">在运行时加载资源</a>功能加载内容时，它会将所有需要的 <a href="SL-Shader.html">Shader 对象</a>加载到 CPU 内存。
+2.Unity 第一次需要使用着色器变体渲染几何体时，它将该变体的数据传递给图形驱动程序。图形驱动程序在 GPU 上创建该变体的表示，并执行平台所需的任何其他工作。</p>
+
+<p>这种行为的好处是着色器变体没有前期的 GPU 内存使用或加载时间。缺点是第一次使用变体时可能会出现明显的停顿，因为图形驱动程序必须在 GPU 上创建着色器程序并执行任何额外的工作。</p>
+
+<p><a name="prewarming-shader-variants"></a></p>
+
+<h2>预热着色器变体</h2>
+
+<p>为避免在性能开销大时出现明显的停顿，Unity 可以要求图形驱动程序在首次需要着色器变体之前创建它们的 GPU 表示形式。这称为<strong>预热</strong>。</p>
+
+<p><strong>警告：</strong>在选择如何执行预热之前，请查看有关图形 API 支持的说明。在 DX12、Vulkan 和 Metal 等现代图形 API 上，只有实验性的 <a href="../ScriptReference/Experimental.Rendering.ShaderWarmup.html">ShaderWarmup</a> API 完全支持，因为它允许您指定顶点格式。使用其他方法可能会导致浪费工作和 GPU 内存，而不会避免停顿。</p>
+
+<p>您可以按照以下方式执行预热：</p>
+
+<ul>
+<li>使用实验性 <a href="../ScriptReference/Experimental.Rendering.ShaderWarmup.html">ShaderWarmup</a> API 预热给定的 Shader 对象或着色器变体集合。有关图形 API 支持，请参阅注释 1。</li>
+<li>在应用程序启动时预热着色器变体集合，方法是将它们添加到 <a href="class-GraphicsSettings.html#shader-loading">Preloaded shaders section of the Graphics Settings 窗口</a>。有关图形 API 支持，请参阅注释 2。</li>
+<li>使用 <a href="../ScriptReference/ShaderVariantCollection.WarmUp.html">ShaderVariantCollection.WarmUp</a> API 预热着色器变体集合。有关图形 API 支持，请参阅注释 2。</li>
+<li>使用 <a href="Shader.WarmupAllShaders">Shader.WarmupAllShaders</a> API 预热当前内存中的所有 Shader 对象的所有变体。有关图形 API 支持，请参阅注释 2。</li>
+</ul>
+
+<p><strong>注意：</strong></p>
+
+<p>1.所有图形 API 完全支持。
+2.DX11 和 OpenGL 完全支持。DX12、Vulkan 和 Metal 部分支持；如果顶点布局和/或者渲染目标设置与用于预热它的数据不同，图形驱动程序可能仍需要执行一些工作。</p>
+
+<h2>用于着色器加载的性能分析器标记</h2>
+
+<p>性能分析器标记 <code>Shader.Parse</code> 用于表示 Unity 将创建的着色器变量数据表示发送到 GPU。性能分析器标记 <code>CreateGPUProgram</code> 用于表示将着色器程序上传到 GPU 并等待 GPU 执行任何所需工作。</p>
+
+<p>有关使用 Unity 性能分析器的信息，请参阅<a href="profiler-profiling-applications.html">对应用程序进行性能分析</a>。</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-variant-collections.html"></a></span><div class="tip">着色器变体集合</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderReplacement.html"></a></span><div class="tip"> 在运行时替换着色器</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

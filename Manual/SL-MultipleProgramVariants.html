@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Declaring and using shader keywords in HLSL - Unity 手册">
+<title>Declaring and using shader keywords in HLSL - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="This page contains information on working with shader keywords in HLSL code. For a general introduction to shader keywords, see Shader keywords. For information on declaring and using shader keywords in Shader Graph, see Keywords.">
+<meta property="og:description" content="This page contains information on working with shader keywords in HLSL code. For a general introduction to shader keywords, see Shader keywords. For information on declaring and using shader keywords in Shader Graph, see Keywords.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-MultipleProgramVariants';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/SL-MultipleProgramVariants.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/SL-MultipleProgramVariants.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/SL-MultipleProgramVariants.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-MultipleProgramVariants.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-MultipleProgramVariants.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-MultipleProgramVariants.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-MultipleProgramVariants.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-MultipleProgramVariants.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-MultipleProgramVariants.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-MultipleProgramVariants.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-MultipleProgramVariants.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-MultipleProgramVariants.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-MultipleProgramVariants.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-MultipleProgramVariants.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-MultipleProgramVariants.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-MultipleProgramVariants.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-MultipleProgramVariants.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-MultipleProgramVariants.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-MultipleProgramVariants.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-MultipleProgramVariants.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-MultipleProgramVariants.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-MultipleProgramVariants.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-MultipleProgramVariants.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/SL-MultipleProgramVariants.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/SL-MultipleProgramVariants.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/SL-MultipleProgramVariants.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/SL-MultipleProgramVariants.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/SL-MultipleProgramVariants.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/SL-MultipleProgramVariants.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-MultipleProgramVariants.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-MultipleProgramVariants.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-MultipleProgramVariants.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-MultipleProgramVariants.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-MultipleProgramVariants.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-MultipleProgramVariants.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-MultipleProgramVariants.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-MultipleProgramVariants.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-MultipleProgramVariants.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-MultipleProgramVariants.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-MultipleProgramVariants.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-MultipleProgramVariants.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-MultipleProgramVariants.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-MultipleProgramVariants.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-MultipleProgramVariants.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-MultipleProgramVariants.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-MultipleProgramVariants.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-MultipleProgramVariants.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-MultipleProgramVariants.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-MultipleProgramVariants.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-ShaderPrograms.html">Unity 中的 HLSL</a></li>
+<li><a href="shader-preprocessor-directives.html">Preprocessor directives in HLSL</a></li>
+<li>Declaring and using shader keywords in HLSL</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-ShaderCompilationAPIs.html"></a></span><div class="tip">Targeting graphics APIs and platforms in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderSemantics.html"></a></span><div class="tip">着色器语义</div>
+</div>
+</div></div>
+<h1>Declaring and using shader keywords in HLSL</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page contains information on working with shader keywords in HLSL code. For a general introduction to shader keywords, see <a href="shader-keywords.html">Shader keywords</a>. For information on declaring and using shader keywords in Shader Graph, see <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest?subfolder=/manual/Keywords.html">Keywords</a>.</p>
+
+<p>In your HLSL code, use <code>#pragma</code> directives to declare shader keywords, and <code>#if</code> directives to indicate that a section of shader code depends on the state of a shader keyword. You can use shader keywords in regular graphics shaders (including <a href="SL-SurfaceShaders.html">Surface Shaders</a>) and <a href="class-ComputeShader.html">compute shaders</a>.</p>
+
+<h2>Declaring shader keywords</h2>
+
+<p>To declare shader keywords, use one of the following <code>#pragma</code> directives in the HLSL code:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Directive</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>#pragma multi_compile</code></td>
+	<td style="text-align:left;">Declares a set of keywords.<br><br>By default, these keywords have global scope and affect all shader stages.<br><br>The build process includes all keywords from this set.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#pragma shader_feature</code></td>
+	<td style="text-align:left;">Declares a set of keywords, and also instructs the compiler to compile variants where none of these keywords are enabled.<br><br>By default, these keywords have global scope and affect all shader stages.<br><br>The build process includes keywords from this set that are in use at build time.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For information on the difference between <code>#pragma multi_compile</code> and <code>#pragma shader_feature</code>, and guidance on when to use which one, see <a href="shader-keywords.html#declaring-keywords-definition-type">Shader keywords</a>.</p>
+
+<p><strong>Note:</strong> If you add a shader to the list of <a href="class-GraphicsSettings.html#Always"><strong>Always Included Shaders</strong></a> in the Graphics settings window, Unity includes all keywords from all sets in the build, even if they were declared with <code>#pragma shader_feature</code>.</p>
+
+<p>You can also add suffixes to these directives to modify their behavior:</p>
+
+<ul>
+<li>Add <code>_local</code> to indicate that a set of keywords has local scope and cannot be overridden by global keywords; otherwise, the keywords have global scope and can be overridden by global keywords. For more information, see <a href="shader-keywords.html#declaring-keywords-scope">Shader keywords: global and local scope</a>.<br><br>You can add this suffix to <code>#pragma multi_compile</code>, or <code>#pragma shader_feature</code> directives; for example, <code>#pragma multi_compile_local</code>, and <code>#pragma shader_feature_local</code> are valid.</li>
+<li>Add <code>_vertex</code>, <code>_fragment</code>, <code>_hull</code>, <code>_domain</code>, <code>_geometry</code>, or <code>_raytracing</code> to indicate that a set of keywords only affects a given shader stage, which can reduce the number of unneeded shader variants. For more information, see <a href="shader-keywords.html#stage-specific-keywords">Shader keywords: Stage-specific keywords</a>.<br><br>You can add these suffixes to <code>#pragma multi_compile</code> or <code>#pragma shader_feature</code> directives, either standalone or after a <code>_local</code> modifier; for example, <code>#pragma multi_compile_vertex</code> and <code>#pragma shader_feature_local_fragment</code> are valid.</li>
+</ul>
+
+<p>Additionally, there are some “shortcut” variations of <code>#pragma multi_compile</code> that add predefined sets of keywords. For more information on these, see <a href="#multi-compile-shortcuts">multi_compile shortcuts</a>.</p>
+
+<h3>Declaring a set of keywords</h3>
+
+<p>You declare keywords in sets. A set contains mutually exclusive keywords.</p>
+
+<p>To declare a set of keywords, use a <code>#pragma multi_compile</code> or <code>#pragma_shader_feature</code> directive, followed by a space-delimited list of keywords.</p>
+
+<p>This example demonstrates how to declare a set of four keywords:</p>
+
+<pre><code>#pragma multi_compile QUALITY_LOW QUALITY_MEDIUM QUALITY_HIGH QUALITY_ULTRA
+</code></pre>
+
+<p>Internally, this works by using <code>#define</code> directives. When Unity compiles the shader, it generates four variants: one where QUALITY_LOW is defined, one where QUALITY_MEDIUM is defined, one where QUALITY_HIGH is defined, and one where QUALITY_ULTRA is defined. At runtime, Unity uses the appropriate variant, based on which of those keywords is enabled.</p>
+
+<p>When you use <code>#pragma shader_feature</code> to declare a set of keywords, Unity also compiles a variant where none of the keywords in that set are defined. This allows you to define behavior without using an additional keyword. Reducing the number of keywords is beneficial in a few ways: it can reduce the total number of variants that Unity compiles, which improves both build times and runtime performance; it reduces the total number of keywords that a shader uses, which prevents it from hitting <a href="shader-keywords.html#keyword-limits">shader keyword limits</a>; and it makes it simpler to <a href="shader-keywords.html#scripts">manage keyword state from C# scripts</a>, because there are fewer keywords to enable and disable.</p>
+
+<p>This example demonstrates how to declare a set that contains only a single keyword:</p>
+
+<pre><code>#pragma shader_feature EXAMPLE_ON
+</code></pre>
+
+<p>You can also instruct Unity to do this when you use <code>#pragma multi_compile</code>. To do so, add a “blank” keyword to the set, with a name that is one or more underscores (<code>_</code>), like this:</p>
+
+<pre><code>#pragma multi_compile __ EXAMPLE_ON
+</code></pre>
+
+<h3>Declaring multiple sets of keywords</h3>
+
+<p>You can declare multiple sets of keywords to represent different features. To do this, use multiple <code>#pragma multi_compile</code> or <code>#pragma_shader_feature</code> directives.</p>
+
+<p>This example demonstrates how to declare one set of four keywords, and another set of three keywords:</p>
+
+<pre><code>#pragma multi_compile QUALITY_LOW QUALITY_MEDIUM QUALITY_HIGH QUALITY_ULTRA
+#pragma multi_compile COLOR_RED COLOR_GREEN COLOR_BLUE
+</code></pre>
+
+<h3>限制</h3>
+
+<p>There are some limitations to how you declare sets of keywords:</p>
+
+<ul>
+<li>You cannot include the same keyword more than once in the same set; however, you can declare the same keyword in different sets.</li>
+<li>You cannot declare the same set of keywords more than once in a shader program.</li>
+<li>There is a limit to the number of keywords that a shader can use. Every keyword declared in the shader source file and its dependencies count towards this limit. For more information, see <a href="shader-keywords.html#keyword-limits">Shader keyword limits</a>.</li>
+</ul>
+
+<h2>Using shader keywords</h2>
+
+<p>To compile code that is used only when a given shader keyword is enabled, you use an <code>#if</code> directive, like this:</p>
+
+<pre><code>// Declare a set of keywords
+#pragma multi_compile QUALITY_LOW QUALITY_MEDIUM QUALITY_HIGH QUALITY_ULTRA
+
+
+#if QUALITY_ULTRA
+// Code here is compiled for variants that are used when the keyword QUALITY_ULTRA is enabled
+#endif
+</code></pre>
+
+<p>In Unity, <code>#if</code> directives work the same as in standard HLSL. For more information on <code>#if</code> directives, see the HLSL documentation: <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-pre-if">if, elif, else, and endif Directives</a>.</p>
+
+<p>Additionally, the <code>#pragma require</code> and <code>#pragma target</code> directives can take keywords as parameters, so that they only apply to variants where given keywords are enabled. For more information, see <a href="SL-ShaderCompileTargets.html">Targeting shader models and GPU features in HLSL</a>.</p>
+
+<p><a name="multi-compile-shortcuts"></a></p>
+
+<h2>multi_compile shortcuts</h2>
+
+<p>Unity provides several “shortcut” notations for declaring shader keywords.</p>
+
+<p>The following shortcuts relate to light, shadow and lightmapping in the Built-in Render Pipeline:</p>
+
+<ul>
+<li>
+<code>multi_compile_fwdbase</code> adds this set of keywords: DIRECTIONAL LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON SHADOWS_SCREEN SHADOWS_SHADOWMASK LIGHTMAP_SHADOW_MIXING LIGHTPROBE_SH. These variants are needed by <a href="../ScriptReference/Rendering.PassType.ForwardBase.html">PassType.ForwardBase</a>.</li>
+<li>
+<code>multi_compile_fwdbasealpha</code> adds this set of keywords: DIRECTIONAL LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING VERTEXLIGHT_ON LIGHTPROBE_SH. These variants are needed by <a href="../ScriptReference/Rendering.PassType.ForwardBase.html">PassType.ForwardBase</a>.</li>
+<li>
+<code>multi_compile_fwdadd</code> adds this set of keywords: POINT DIRECTIONAL SPOT POINT_COOKIE DIRECTIONAL_COOKIE. These variants are needed by <a href="../ScriptReference/Rendering.PassType.ForwardAdd.html">PassType.ForwardAdd</a>.</li>
+<li>
+<code>multi_compile_fwdadd_fullshadows</code> adds this set of keywords: POINT DIRECTIONAL SPOT POINT_COOKIE DIRECTIONAL_COOKIE SHADOWS_DEPTH SHADOWS_SCREEN SHADOWS_CUBE SHADOWS_SOFT SHADOWS_SHADOWMASK LIGHTMAP_SHADOW_MIXING. This is the same as <code>multi_compile_fwdadd</code>, but this adds the ability for the lights to have real-time shadows.</li>
+<li>
+<code>multi_compile_lightpass</code> adds this set of keywords: POINT DIRECTIONAL SPOT POINT_COOKIE DIRECTIONAL_COOKIE SHADOWS_DEPTH SHADOWS_SCREEN SHADOWS_CUBE SHADOWS_SOFT SHADOWS_SHADOWMASK LIGHTMAP_SHADOW_MIXING. This is effectively a catch-all shortcut for all functionality related to real-time light and shadows, other than Light Probes.</li>
+<li>
+<code>multi_compile_shadowcaster</code> adds this set of keywords: SHADOWS_DEPTH SHADOWS_CUBE. These variants are needed by <a href="../ScriptReference/Rendering.PassType.ShadowCaster.html">PassType.ShadowCaster</a>.</li>
+<li>
+<code>multi_compile_shadowcollector</code> adds this set of keywords: SHADOWS_SPLIT_SPHERES SHADOWS_SINGLE_CASCADE. It also compiles variants without any of these keywords. These variants are needed for screen-space shadows.</li>
+<li>
+<code>multi_compile_prepassfinal</code> adds this set of keywords: LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON UNITY_HDR_ON SHADOWS_SHADOWMASK LIGHTPROBE_SH. It also compiles variants without any of these keywords. These variants are needed by <a href="../ScriptReference/Rendering.PassType.LightPrePassFinal.html">PassType.LightPrePassFinal</a> and <a href="../ScriptReference/Rendering.PassType.Deferred.html">PassType.Deferred</a>.</li>
+</ul>
+
+<p>The following shortcuts relate to other settings:</p>
+
+<ul>
+<li>
+<code>multi_compile_particles</code> adds this keyword relating to the Built-in particle system: SOFTPARTICLES_ON. It also compiles variants without this keyword. For more information, see <a href="Built-inParticleSystem.html">Built-in Particle System</a>.</li>
+<li>
+<code>multi_compile_fog</code> adds this set of keywords relating to fog: FOG_LINEAR, FOG_EXP, FOG_EXP2. It also compiles variants without any of these keywords. You can control this behavior in the <a href="class-GraphicsSettings.html">Graphics settings</a> window.</li>
+<li>
+<code>multi_compile_instancing</code> adds keywords relating to instancing. If the shader uses procedural instancing, it adds this set of keywords: INSTANCING_ON PROCEDURAL_ON. Otherwise, it adds this keyword: INSTANCING_ON. It also compiles variants without any of these keywords. You can control this behavior in the <a href="class-GraphicsSettings.html">Graphics settings</a> window.</li>
+</ul>
+
+<p>Most of these shortcuts contain multiple keywords. if you know the project doesn’t need them, you can use <code>#pragma skip_variants</code> to remove some of them. For example:</p>
+
+<pre><code># pragma multi_compile_fwdadd
+# pragma skip_variants POINT POINT_COOKIE
+</code></pre>
+
+<p>This tells the compiler to remove the keywords <code>POINT</code> or <code>POINT_COOKIE</code> from other directives.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-ShaderCompilationAPIs.html"></a></span><div class="tip">Targeting graphics APIs and platforms in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderSemantics.html"></a></span><div class="tip">着色器语义</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

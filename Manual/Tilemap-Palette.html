@@ -1,0 +1,498 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Creating a Tile Palette - Unity 手册">
+<title>Creating a Tile Palette - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2021.3/uploads/Main/2D_Tile_Palette_CreateNew.png">
+<meta name="description" content="将选择的一组瓦片放在瓦片面板上，这样您就可以从面板中选择瓦片以在瓦片地图上进行绘制。要创建一个瓦片面板，转到 Window &gt; 2D &gt; Tile Palette，打开 Tile Palette 窗口。如果看不到此选项，则表示可能未安装 2D Tilemap Editor 包。如果确实如此，请通过 Package Manager 下载 2D Tilemap Editor 包。">
+<meta property="og:description" content="将选择的一组瓦片放在瓦片面板上，这样您就可以从面板中选择瓦片以在瓦片地图上进行绘制。要创建一个瓦片面板，转到 Window &gt; 2D &gt; Tile Palette，打开 Tile Palette 窗口。如果看不到此选项，则表示可能未安装 2D Tilemap Editor 包。如果确实如此，请通过 Package Manager 下载 2D Tilemap Editor 包。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Tilemap-Palette';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/Tilemap-Palette.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/Tilemap-Palette.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/Tilemap-Palette.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/Tilemap-Palette.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/Tilemap-Palette.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/Tilemap-Palette.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/Tilemap-Palette.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/Tilemap-Palette.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Tilemap-Palette.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Tilemap-Palette.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Tilemap-Palette.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Tilemap-Palette.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Tilemap-Palette.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Tilemap-Palette.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Tilemap-Palette.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Tilemap-Palette.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Tilemap-Palette.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Tilemap-Palette.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Tilemap-Palette.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Tilemap-Palette.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Tilemap-Palette.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Tilemap-Palette.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Tilemap-Palette.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Tilemap-Palette.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Tilemap-Palette.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Tilemap-Palette.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Tilemap-Palette.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Tilemap-Palette.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/Tilemap-Palette.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/Tilemap-Palette.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/Tilemap-Palette.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/Tilemap-Palette.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/Tilemap-Palette.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/Tilemap-Palette.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Tilemap-Palette.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Tilemap-Palette.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Tilemap-Palette.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Tilemap-Palette.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Tilemap-Palette.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Tilemap-Palette.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Tilemap-Palette.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Tilemap-Palette.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Tilemap-Palette.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Tilemap-Palette.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Tilemap-Palette.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Tilemap-Palette.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Tilemap-Palette.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Tilemap-Palette.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Tilemap-Palette.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Tilemap-Palette.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Tilemap-Palette.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Tilemap-Palette.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Tilemap-Palette.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Tilemap-Palette.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D</a></li>
+<li><a href="class-Tilemap.html">Tilemap</a></li>
+<li><a href="Tilemap-workflow.html">瓦片地图工作流程</a></li>
+<li>Creating a Tile Palette</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-CreatingTiles.html"></a></span><div class="tip">创建瓦片</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Painting.html"></a></span><div class="tip">在瓦片地图上绘制</div>
+</div>
+</div></div>
+<h1>Creating a Tile Palette</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>将选择的一组瓦片放在<strong>瓦片面板</strong>上，这样您就可以从面板中选择瓦片以<a href="Tilemap-Painting.html">在瓦片地图上进行绘制</a>。要创建一个<strong>瓦片面板</strong>，转到 <strong>Window &gt; 2D &gt; Tile Palette</strong>，打开 <strong>Tile Palette</strong> 窗口。如果看不到此选项，则表示可能未安装 <strong>2D Tilemap Editor</strong> 包。如果确实如此，请通过 <a href="Packages.html">Package Manager</a> 下载 <strong>2D Tilemap Editor</strong> 包。</p>
+
+<p>默认情况下，Tile Palette 窗口是空的。选择 <strong>New Palette</strong> 下拉选单以打开项目中可用的瓦片面板列表，或用于创建新面板的选项。选择 <strong>Create New Palette</strong> 选项创建新的面板。</p>
+
+<p><img src="../uploads/Main/2D_Tile_Palette_CreateNew.png" alt=""><br>从下拉选单选择 Create New Palette 选项。</p>
+
+<p>选择创建新瓦片面板的选项后，** Create New Palette** 对话框变为可用。它包含创建新面板时可用的不同属性设置和选项：</p>
+
+<p><img src="../uploads/Main/TilePalette_Options.png" alt=""><br>Create New Palette 的选项。</p>
+
+<p><img src="../uploads/Main/TilePalette_Grid.png" alt=""><br>将 Grid 选项展开。</p>
+
+<h2>Create New Palette 属性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">为创建的瓦片面板资源提供一个名称。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Grid</strong></td>
+	<td style="text-align:left;">选择要将创建的瓦片面板绘制到的<a href="class-Grid.html">网格</a>布局。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Rectangle</td>
+	<td style="text-align:left;">如果要为默认矩形瓦片地图创建面板，请选择此选项。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Hexagon</td>
+	<td style="text-align:left;">如果要为<a href="Tilemap-Hexagonal.html">六边形瓦片地图 (Hexagonal Tilemap)</a> 创建面板，请选择此选项。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Isometric</td>
+	<td style="text-align:left;">如果要为<a href="Tilemap-Isometric.html">等距瓦片地图 (Isometric Tilemap)</a> 创建面板，请选择此选项。请参阅<a href="Tilemap-Isometric-Palette.html">创建用于等距瓦片地图的瓦片面板</a>以了解更多信息。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Isometric Z as Y</strong></td>
+	<td style="text-align:left;">如果要为 <a href="Tilemap-Isometric.html">Isometric Z as Y Tilemap</a> 创建面板，请选择此选项。请参阅<a href="Tilemap-Isometric-Palette.html">创建用于等距瓦片地图的瓦片面板</a>以了解更多信息。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">     * Hexagon Type（仅当 Grid 类型设置为 Hexagon 时可用）</td>
+	<td style="text-align:left;">选择要将瓦片面板绘制到的六边形瓦片地图的类型。请参阅有关<a href="Tilemap-Hexagonal.html">六边形瓦片地图</a>的文档以了解更多信息。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cell Size</strong></td>
+	<td style="text-align:left;">要将瓦片绘制到的单元格的大小。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Automatic</td>
+	<td style="text-align:left;">Cell Size 以 Unity 单位自动设置，并基于用于创建瓦片资源的精灵的大小。如果有多个瓦片，则会调整 Cell Size 以匹配面板左下角的第一个瓦片，使其完全适合单元格。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Manual</td>
+	<td style="text-align:left;">选择此选项可输入自定义大小值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sort Mode</strong></td>
+	<td style="text-align:left;">确定瓦片面板中的渲染器的<a href="../ScriptReference/TransparencySortMode.html">透明度排序模式</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Default</td>
+	<td style="text-align:left;">默认透明度排序模式。此模式由项目的<strong>图形设置</strong>决定。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Orthographic</td>
+	<td style="text-align:left;">选择此模式可根据从摄像机到瓦片面板中渲染器的垂直距离对渲染器进行排序。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Perspective</td>
+	<td style="text-align:left;">选择此模式可根据从摄像机到瓦片面板中渲染器的直接距离对渲染器进行排序。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">    Custom Axis Sort</td>
+	<td style="text-align:left;">选择此模式可根据对象沿自定义轴的距离对其进行排序。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sort Axis</strong></td>
+	<td style="text-align:left;">如果 <strong>Sort Mode</strong> 设置为 Custom Axis Sort，则设置排序轴的 XYZ 值。</td>
+</tr>
+</tbody>
+</table>
+
+<p>命名新创建的面板并选择所需的设置，然后选择 Create 按钮。出现提示时，选择要将 Palette Asset 文件保存到的文件夹。新创建的面板会自动加载到 Tile Palette 窗口中。</p>
+
+<p><img src="../uploads/Main/2D-TilePalette-blank.png" alt=""><br>空白瓦片面板</p>
+
+<p>将<strong>纹理</strong>或<strong>精灵</strong>从 <strong>Assets</strong> 文件夹拖放到瓦片面板，并在出现提示时选择保存新的<a href="Tilemap-TileAsset.html">瓦片资源</a>的位置。将在所选文件夹中生成新的瓦片资源，并会将瓦片放置在活动 Tile Palette 窗口的网格中。</p>
+
+<figure>
+<img src="../uploads/Main/Tilemap-CreatingTiles-4.png" alt="">
+</figure>
+
+<p>使用以下快捷方式和操作来导航 Palette 窗口，并开始在编辑器窗口中选取瓦片以<a href="">在瓦片地图上绘制</a>。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">快捷方式/操作</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>单击一个瓦片</strong></td>
+	<td style="text-align:left;">选择瓦片</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>选择并将鼠标拖过多个瓦片</strong></td>
+	<td style="text-align:left;">选择多个瓦片</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Alt + 鼠标左键并拖动</strong></td>
+	<td style="text-align:left;">平移</td>
+</tr>
+<tr>
+	<td style="text-align:left;">__ 单击鼠标中键并拖动__</td>
+	<td style="text-align:left;">平移</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>旋转滚轮键</strong></td>
+	<td style="text-align:left;">放大/缩小</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Active Brush Inspector</h2>
+
+<p>Active Brush Inspector 位于 Tile Palette 窗口底部。在此处可以更改当前有效的画笔及其属性。默认情况下会最小化。要将其展开，请向上拖动底部的工具栏。</p>
+
+<p><img src="../uploads/Main/DefaultBrush_highlight.png" alt=""><br>Brush 下拉选单突出显示。</p>
+
+<p>使用 <strong>Brush</strong> 下拉选单可将有效的画笔从 ’Default Brush’（默认画笔）更改为其他画笔，例如<a href="Tilemap-ScriptableBrushes.html">可编程画笔</a>。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Script</strong></td>
+	<td style="text-align:left;">显示当前分配的脚本资源，该资源为瓦片地图的绘制提供一组固定的 API。默认为 <a href="Tilemap-ScriptableBrushes-GridBrushBase.html">GridBrush</a>。用户可以使用或创建自己的<a href="Tilemap-ScriptableBrushes.html">可编写脚本的画笔</a>，以供从下拉选单中使用。Script 属性更新以反映当前活动的画笔。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Flood Fill Contiguous Only</strong></td>
+	<td style="text-align:left;">启用此属性使<a href="Tilemap-Painting.html#Fill">灌填工具</a>仅影响瓦片地图上与目标瓦片相同且目标位置彼此相邻的瓦片。禁用时，灌填将更改与瓦片地图上的目标图块相同的所有瓦片，无论其位置如何。这仅影响默认画笔。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lock Z Position</strong></td>
+	<td style="text-align:left;">启用此属性可更改活动画笔的 z 位置。禁用则防止对活动画笔的当前 z 位置进行任何更改。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Z Position</strong></td>
+	<td style="text-align:left;">仅在启用 Can Change Z Position 时可用。为此画笔输入绘制瓦片时所需的 z 轴值（仅限整数），这也会调整 <a href="Tilemap-Isometric-CreateIso.html">Z as Y 等距瓦片地图</a> 上瓦片的相对高度。请参阅有关<a href="Tilemap-Isometric-Palette.html">在瓦片面板中调整瓦片高度</a>的文档以了解更多信息。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>编辑瓦片面板 (Tile Palette)</h2>
+
+<p>拾取和绘制瓦片的工具也可用于直接编辑瓦片面板，允许您移动和操作当前放置在瓦片面板上的瓦片。从 ‘Palette’ 下拉选单中选择一个要编辑的面板，然后单击 <strong>Edit</strong> 将面板解锁以进行编辑。</p>
+
+<figure>
+<img src="../uploads/Main/Edit_highlighted.png" alt="">
+</figure>
+
+<p>请参阅关于<a href="Tilemap-Painting.html">在瓦片地图上绘制</a>的文档，了解面板工具的快捷方式和功能，这些工具同样可用于编辑面板。</p>
+
+<h2>从现有网格预制件创建面板资源</h2>
+
+<p>您可以将现有的<a href="Prefabs.html">预制件</a>转换为面板资源，以便在 Tile Palette 窗口中使用。为此，预制件不能已经是面板资源，并且在其最顶层的游戏对象上必须有一个 Grid 组件。</p>
+
+<figure>
+<img src="../uploads/Main/ActiveBrush_toolbar.png" alt="Tile Palette 工具栏">
+<figcaption>Tile Palette 工具栏</figcaption>
+</figure>
+
+<p>要转换预制件，请将其拖放到 Tile Palette 工具栏上（在上图中突出显示）。编辑器会自动将其转换为面板资源，并添加网格面板资源。新的面板资源与其源的名称相同，并可从 Palette 下拉选单中选择。</p>
+
+<h2>瓦片面板小工具</h2>
+
+<figure>
+<img src="../uploads/Main/TilePalette_gizmos.png" alt="">
+</figure>
+
+<p>瓦片面板可在当前面板资源上显示图标（<a href="GizmosMenu.html">小工具</a>），以帮助您可视化特定条件。例如，您可以添加一个为不包含精灵的瓦片显示特殊图标的小工具。</p>
+
+<p>要在瓦片面板上显示默认的 Unity 和瓦片资源的小工具，请启用 Gizmos 开关（在上图中突出显示）。瓦片面板会立即显示面板资源中任何带有 <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html">MonoBehaviour.OnDrawGizmos()</a> 的组件。</p>
+
+<p>要将带有 DrawGizmo 的组件添加到面板资源：</p>
+
+<p>1.在 Project 窗口中选择面板资源。</p>
+
+<p>2.以<a href="EditingInPrefabMode.html">预制件模式</a>打开面板资源。</p>
+
+<p>3.在预制件模式下添加组件。</p>
+
+<p>4.在预制件模式下保存资源。</p>
+
+<p>5.退出预制件模式。</p>
+
+<h2>Tile Palette 上下文菜单</h2>
+
+<figure>
+<img src="../uploads/Main/TilePalette_ContextualMenu.png" alt="">
+</figure>
+
+<p>右键单击 Tile Palette 工具栏以显示上下文菜单，其中列出了多个操作，可用于选择和定位与瓦片面板交互的对象。下面列出了可用的操作：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">操作</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>选择绘制目标</strong></td>
+	<td style="text-align:left;">在 Hierarchy 窗口中选择游戏对象，该对象是瓦片面板中的当前活动瓦片地图。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>选择面板预制件</strong></td>
+	<td style="text-align:left;">在 Project 窗口中选择当前在瓦片面板中处于活动状态的面板预制件资源。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>选择瓦片资源</strong></td>
+	<td style="text-align:left;">在 Project 窗口中选择当前选定的瓦片资源。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>解锁/锁定面板编辑</strong></td>
+	<td style="text-align:left;">解锁或锁定瓦片面板的编辑。</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<p><em><span class="page-history">灌填工具连续设置和 Tile Palette 上下文菜单添加于 <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/30_search.html?q=newin20202">2020.2</a><span class="search-words"> NewIn20202</span></span>
+</em><span class="page-history">页面内容和屏幕截图更新于 <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/30_search.html?q=newin20201">2020.1</a><span class="search-words"> NewIn20201</span></span>
+* <span class="page-history">在 <a href="https://docs.unity3d.com/2017.2/Documentation/Manual/30_search.html?q=newin20172">2017.2</a> 版中添加了瓦片地图 <span class="search-words">NewIn20172</span></span></p>
+<!-- area:authoring -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-CreatingTiles.html"></a></span><div class="tip">创建瓦片</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Painting.html"></a></span><div class="tip">在瓦片地图上绘制</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

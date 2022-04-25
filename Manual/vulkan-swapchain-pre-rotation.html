@@ -1,0 +1,281 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Vulkan 交换链预旋转 - Unity 手册">
+<title>Vulkan 交换链预旋转 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="如果应用程序的帧缓冲区方向与显示器的原生方向（对于大多数设备为纵向）不匹配，则每次渲染帧出现在屏幕上时，Android 都需要应用额外的旋转。这种额外的旋转可能会产生性能成本，具体取决于设备的硬件功能。">
+<meta property="og:description" content="如果应用程序的帧缓冲区方向与显示器的原生方向（对于大多数设备为纵向）不匹配，则每次渲染帧出现在屏幕上时，Android 都需要应用额外的旋转。这种额外的旋转可能会产生性能成本，具体取决于设备的硬件功能。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'vulkan-swapchain-pre-rotation';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/vulkan-swapchain-pre-rotation.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/vulkan-swapchain-pre-rotation.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/vulkan-swapchain-pre-rotation.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/vulkan-swapchain-pre-rotation.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/vulkan-swapchain-pre-rotation.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/vulkan-swapchain-pre-rotation.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/vulkan-swapchain-pre-rotation.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/vulkan-swapchain-pre-rotation.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/vulkan-swapchain-pre-rotation.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/vulkan-swapchain-pre-rotation.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/vulkan-swapchain-pre-rotation.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/vulkan-swapchain-pre-rotation.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/vulkan-swapchain-pre-rotation.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/vulkan-swapchain-pre-rotation.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/vulkan-swapchain-pre-rotation.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/vulkan-swapchain-pre-rotation.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/vulkan-swapchain-pre-rotation.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/vulkan-swapchain-pre-rotation.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/vulkan-swapchain-pre-rotation.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/vulkan-swapchain-pre-rotation.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/vulkan-swapchain-pre-rotation.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/vulkan-swapchain-pre-rotation.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/vulkan-swapchain-pre-rotation.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/vulkan-swapchain-pre-rotation.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/vulkan-swapchain-pre-rotation.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/vulkan-swapchain-pre-rotation.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/vulkan-swapchain-pre-rotation.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/vulkan-swapchain-pre-rotation.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/vulkan-swapchain-pre-rotation.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/vulkan-swapchain-pre-rotation.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/vulkan-swapchain-pre-rotation.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/vulkan-swapchain-pre-rotation.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/vulkan-swapchain-pre-rotation.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/vulkan-swapchain-pre-rotation.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/vulkan-swapchain-pre-rotation.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/vulkan-swapchain-pre-rotation.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/vulkan-swapchain-pre-rotation.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/vulkan-swapchain-pre-rotation.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/vulkan-swapchain-pre-rotation.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/vulkan-swapchain-pre-rotation.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/vulkan-swapchain-pre-rotation.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/vulkan-swapchain-pre-rotation.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/vulkan-swapchain-pre-rotation.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/vulkan-swapchain-pre-rotation.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/vulkan-swapchain-pre-rotation.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/vulkan-swapchain-pre-rotation.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/vulkan-swapchain-pre-rotation.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/vulkan-swapchain-pre-rotation.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/vulkan-swapchain-pre-rotation.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="android.html">Android</a></li>
+<li><a href="android-developing.html">Developing for Android</a></li>
+<li><a href="android-graphics.html">Graphics for Android</a></li>
+<li>Vulkan 交换链预旋转</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Android-SinglePassStereoRendering.html"></a></span><div class="tip">Single-pass stereo rendering for Android</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-testing-and-debugging.html"></a></span><div class="tip">Testing and debugging</div>
+</div>
+</div></div>
+<h1>Vulkan 交换链预旋转</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>如果应用程序的帧缓冲区方向与显示器的原生方向（对于大多数设备为纵向）不匹配，则每次渲染帧出现在屏幕上时，Android 都需要应用额外的旋转。这种额外的旋转可能会产生性能成本，具体取决于设备的硬件功能。</p>
+
+<p>大多数情况下，可以在渲染期间应用此旋转，而开销很小。为此，请导航到 Android <a href="class-PlayerSettingsAndroid.html">Player Settings</a>（另请参阅：<a href="../ScriptReference/PlayerSettings.vulkanEnablePreTransform.html"> <code>PlayerSettings.vulkanEnablePreTransform</code></a>）并启用 <strong>Apply display rotation during rendering</strong>。</p>
+
+<p><strong>注意：</strong>此旋转仅适用于 Unity 直接渲染到后备缓冲区时。它在渲染到渲染纹理时不起作用。</p>
+
+<p>为了应用旋转，Unity 修改了投影矩阵（UNITY_MATRIX_MVP、UNITY_MATRIX_P）。这意味着旋转本身是在顶点着色器中应用的。</p>
+
+<p><code>preTransform</code> 设置不会影响 Unity 的 C# API 的行为。例如，<code>Screen.width</code> 的值不会因为 <code>preTransform</code> 设置而改变。这同样适用于视口和剪辑矩形。Unity 根据需要调整这些设置，还会处理来自后备缓冲区的回读操作，例如 Grab Pass、ReadPixels 或 Screenshot。</p>
+
+<p>Unity 提供实用程序宏来处理着色器中的特殊情况（有关更多信息，请参阅下面的<a href="#known-limitations">已知限制</a>部分）。</p>
+
+<p>仅当以下所有条件都为真时才定义宏 UNITY_PRETRANSFORM_TO_DISPLAY_ORIENTATION（否则，未定义）：</p>
+
+<ul>
+<li>
+<code>preTransform</code> 在播放器设置中启用</li>
+<li>平台设置为 Android</li>
+<li>图形 API 设置为 Vulkan</li>
+</ul>
+
+<p>UNITY_DISPLAY_ORIENTATION_PRETRANSFORM 是一个常量，设置为当前 <code>preTransform</code> 旋转。它的值是以下之一：</p>
+
+<ul>
+<li>UNITY_DISPLAY_ORIENTATION_0</li>
+<li>UNITY_DISPLAY_ORIENTATION_90</li>
+<li>UNITY_DISPLAY_ORIENTATION_180</li>
+<li>UNITY_DISPLAY_ORIENTATION_270</li>
+</ul>
+
+<p>如果 UNITY_PRETRANSFORM_TO_DISPLAY_ORIENTATION 未定义，或者当渲染到渲染纹理时，UNITY_DISPLAY_ORIENTATION_PRETRANSFORM 的值是 UNITY_DISPLAY_ORIENTATION_0。</p>
+
+<p>UNITY_DISPLAY_ORIENTATION_PRETRANSFORM 被转换为 Vulkan 特化常量，这样它在 <code>if</code> 或 <code>switch</code> 语句中的使用会很高效。</p>
+
+<h2>已知限制 <a name="known-limitations"></a>
+</h2>
+
+<p>在以下情况下，如果启用 preTransform，则 Unity 项目可能需要额外修改，然后才能使用：</p>
+
+<ul>
+<li>不使用 Unity 投影矩阵的着色器</li>
+<li>依赖于片元着色器中当前像素位置的着色器 (<code>SV_Position</code>)</li>
+<li>使用屏幕空间导数（ddx、ddy）的着色器</li>
+<li>使用 Vulkan 交换链图像的原生渲染插件可能需要修改</li>
+<li>在 MRT 设置中通过 Unity RenderPass API 同时使用后备缓冲区与其他渲染纹理</li>
+</ul>
+
+<p>这些情况仅适用于直接渲染到后备缓冲区时。</p>
+
+<h2>阅读更多信息</h2>
+
+<ul>
+<li>Android 开发者网站上的 <a href="https://developer.android.com/ndk/guides/graphics/design-notes?hl=sk&amp;authuser=3">Vulkan Design Guidelines</a>。</li>
+<li>Android 开发者博客上的<a href="https://android-developers.googleblog.com/2020/02/handling-device-orientation-efficiently.html">使用预旋转在 Vulkan 中有效处理设备方向</a>。</li>
+<li>arm 社区网站上的 <a href="https://community.arm.com/developer/tools-software/graphics/b/blog/posts/appropriate-use-of-surface-rotation">Vulkan Mobile Best Practice - Appropriate Use of Surface Rotation</a>。</li>
+</ul>
+<!-- area:platforms -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Android-SinglePassStereoRendering.html"></a></span><div class="tip">Single-pass stereo rendering for Android</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-testing-and-debugging.html"></a></span><div class="tip">Testing and debugging</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Physics in Unity 5.0 - Unity 手册">
+<title>Physics in Unity 5.0 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity 5.0 features an upgrade to PhysX3.3 SDK. Please give this blogpost a quick look before taking any action on your 4.x projects. It should give you a taste of what to expect from the new codebase: High Performance Physics in Unity 5.
+Please be warned that PhysX3 is not 100% compatible with PhysX2 and requires some actions from the user when upgrading.">
+<meta property="og:description" content="Unity 5.0 features an upgrade to PhysX3.3 SDK. Please give this blogpost a quick look before taking any action on your 4.x projects. It should give you a taste of what to expect from the new codebase: High Performance Physics in Unity 5.
+Please be warned that PhysX3 is not 100% compatible with PhysX2 and requires some actions from the user when upgrading.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UpgradeGuide5-Physics';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/UpgradeGuide5-Physics.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/UpgradeGuide5-Physics.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/UpgradeGuide5-Physics.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UpgradeGuide5-Physics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UpgradeGuide5-Physics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UpgradeGuide5-Physics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UpgradeGuide5-Physics.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UpgradeGuide5-Physics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UpgradeGuide5-Physics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UpgradeGuide5-Physics.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UpgradeGuide5-Physics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UpgradeGuide5-Physics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UpgradeGuide5-Physics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UpgradeGuide5-Physics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UpgradeGuide5-Physics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UpgradeGuide5-Physics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UpgradeGuide5-Physics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UpgradeGuide5-Physics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UpgradeGuide5-Physics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UpgradeGuide5-Physics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UpgradeGuide5-Physics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UpgradeGuide5-Physics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UpgradeGuide5-Physics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/UpgradeGuide5-Physics.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/UpgradeGuide5-Physics.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/UpgradeGuide5-Physics.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/UpgradeGuide5-Physics.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/UpgradeGuide5-Physics.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/UpgradeGuide5-Physics.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UpgradeGuide5-Physics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UpgradeGuide5-Physics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UpgradeGuide5-Physics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UpgradeGuide5-Physics.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UpgradeGuide5-Physics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UpgradeGuide5-Physics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UpgradeGuide5-Physics.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UpgradeGuide5-Physics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UpgradeGuide5-Physics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UpgradeGuide5-Physics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UpgradeGuide5-Physics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UpgradeGuide5-Physics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UpgradeGuide5-Physics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UpgradeGuide5-Physics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UpgradeGuide5-Physics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UpgradeGuide5-Physics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UpgradeGuide5-Physics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UpgradeGuide5-Physics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UpgradeGuide5-Physics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UpgradeGuide5-Physics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UpgradeGuides.html">升级 Unity</a></li>
+<li><a href="UpgradeGuideLegacy.html">旧版升级指南</a></li>
+<li><a href="UpgradeGuide5.html">升级到 Unity 5.0</a></li>
+<li>Physics in Unity 5.0</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UpgradeGuide5-Plugins.html"></a></span><div class="tip">Unity 5.0 中的插件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UpgradeGuide5-Shaders.html"></a></span><div class="tip">Unity 5.0 中的着色器</div>
+</div>
+</div></div>
+<h2>Physics in Unity 5.0</h2>
+
+<p>Unity 5.0 features an upgrade to PhysX3.3 SDK. Please give this blogpost a quick look before taking any action on your 4.x projects. It should give you a taste of what to expect from the new codebase: <a href="http://blogs.unity3d.com/2014/07/08/high-performance-physics-in-unity-5/">High Performance Physics in Unity 5</a>.
+Please be warned that PhysX3 is not 100% compatible with PhysX2 and requires some actions from the user when upgrading.</p>
+
+<h3>General overview of updates</h3>
+
+<p>Unity 5.0 physics could be expected to work up to 2x faster than in previous versions. Most of the components you were familiar with are still there, and you will find them working as before. Of course, some behaviours were impossible to get the same and some were just weird behaviours caused by limitations of the pre-existed codebase, so we had to take changes. The two areas that got the most significant change are Cloth component and WheelCollider component. We’re including a section about each of them below. Then, there are smaller changes all over the physics code that cause incompatibility. </p>
+
+<h3>Changes that are likely to affect projects:</h3>
+
+<h4>Adaptive force is now switched off by default</h4>
+
+<p>Adaptive force was introduced to help with the simulation of large stacks, but it turned out to be great only for demos. In real games it happened to cause wrong behaviour. You can switch it on in the editor physics properties: Edit -&gt; Project settings -&gt; Physics -&gt; Enable adaptive force.</p>
+
+<h4>Smooth sphere collisions are removed both from terrain and meshes.</h4>
+
+<p>PhysX3 has the feature that addresses the same issue and it’s no longer switchable as it’s considered to be a solution without major drawbacks.</p>
+
+<h4>Springs expose larger amplitudes with PhysX3.</h4>
+
+<p>you may want to tune spring parameters after upgrading.</p>
+
+<h4>Setting Terrain Physics Material has changed</h4>
+
+<p>Use TerrainCollider.sharedMaterial and TerrainCollider.material to specify physics material for terrain. The older way of setting physics material through the TerrainData will no longer work. As a bonus, you can now specify terrain physics materials on a per collider basis.</p>
+
+<h4>Shape casting and sweeping has changed:</h4>
+
+<ul>
+<li>Shape sweeps report all shapes they hit (i.e CapsuleCast and SphereCast would return all shapes they hit, even the ones that fully contain the primitive)</li>
+<li>Raycasts filter out shapes that contain the raycast origin</li>
+</ul>
+
+<h4>Compound Collider events:</h4>
+
+<p>When using compound colliders, OnCollisionEnter is now called once per each contact pair</p>
+
+<h4>Triggers must be convex:</h4>
+
+<p>From now on, you can have triggers only on convex shapes (a PhysX restriction):</p>
+
+<ul>
+<li>TerrainCollider no longer supports IsTrigger flag</li>
+<li>MeshCollider can have IsTrigger only if it’s convex</li>
+</ul>
+
+<h4>Dynamic bodies must be convex:</h4>
+
+<p>Dynamic bodies (i.e. those having Rigidbody attached with Kinematic = false) can no longer have concave mesh colliders (a PhysX limitation).</p>
+
+<p>If you want to have collisions with concave meshes, you can only have them on static colliders and kinematic bodies</p>
+
+<h4>Ragdoll joints:</h4>
+
+<p>Joint setups for ragdolls will likely need tweaking. </p>
+
+<p>These suggestions apply to joints in general as well.</p>
+
+<p>See the <a href="RagdollStability.html">Joint And Ragdoll Stability</a> page for most recent version of this guide.</p>
+
+<ul>
+<li><p>Avoid small angles of “Angular Y Limit” and “Angular Z Limit”. Depending on your setup the minimum angles should be around 5 to 15 degrees in order to be stable. Instead of using a small angle try setting the angle to zero. This will lock the axis and provide a stable simulation.</p></li>
+<li><p>Set “Enable Preprocessing” to false (unchecked). Disabling the preprocessing can help against joints “blowing up”. Joints can “blow up” if they are forced into situations where there is no possible way to satisfy the joint constraints. This can occur if jointed rigid bodies are pulled apart by static collision geometry, like spawning a ragdoll partially inside a wall.</p></li>
+<li><p>Ragdoll stability or stretching: If ragdolls are given extreme circumstances, such as spawning partially inside a wall or pushed with a large force, the joint solver will be unable to keep the rigid bodies together. This can result in stretching or a “cloud of body parts”. Please enable projection on the joints, using either “ConfigurableJoint.projectionMode” or “CharacterJoint.enableProjection”.</p></li>
+<li><p>If bodies connected with joints are jittering try increase Edit-&gt;Project Settings-&gt;Physics-&gt;“Solver Iteration Count”. Try between 10 or 20.</p></li>
+<li><p>Never use direct transform access with kinematic bodies jointed to other bodies. Doing so skips the step where PhysX computes internal velocities of corresponding bodies and thus makes solver provide unpleasant results. We’ve seen some 2D projects using direct transform access to flip characters via altering transform.direction on the root boon of the rig. This behaves much better if you use MovePosition / MoveRotation / Move instead.</p></li>
+</ul>
+
+<h4>Rigidbody’s constraints are applied in local space</h4>
+
+<p>The locking mechanism we used in Unity 4 was basically discarding changes to locked rotations &amp; was resetting the angular speeds as a post-solver step. This was working mostly fine except that there were issues with bodies failing to go asleep as the solver wanted to adjust the rotations every frame; and a few related cases were noticed over the years. When working on PhysX3 integration we utilised this new feature of PhysX 3.3 where we can set the infinite inertia tensor components for locked rotational degrees of freedom. This is now supported in the solver so the body would now go to sleep appropriately, but since this is inertia, it is applied in local coordinates.</p>
+
+<h4>WheelCollider</h4>
+
+<p>The new WheelCollider is powered by the PhysX3 Vehicles SDK that is basically a completely new vehicle simulation library when compared to the code we had with PhysX2. </p>
+
+<p><a href="WheelColliderTutorial.html">Read more about the new WheelCollider here</a>.</p>
+
+<h4>Cloth</h4>
+
+<p>Unity 5 uses the completely rewritten cloth solver provided by the new PhysX SDK. This cloth solver has been designed with character clothing in mind, and is a great improvement compared to the old version in terms of performance and stability. Unity 5 replaces the SkinnedCloth and InteractiveCloth components in Unity 4 with a single Cloth component, which works in conjunction with a SkinnedMeshRenderer. The functionality is similar to the previous SkinnedCloth component, but it is now possible to assign arbitrary, non-skinned meshes to the SkinnedMeshRenderer, so you can still handle cloth simulation on any random mesh.</p>
+
+<p>However, some functionality which was available on the old InteractiveCloth is now no longer supported by the new version of PhysX as it is difficult to implement these with good performance. Specifically:</p>
+
+<ul>
+<li>you can no longer use cloth to collide with arbitrary world geometry</li>
+<li>tearing is no longer supported</li>
+<li>you can no longer apply pressure on cloth</li>
+<li>you can no longer attach cloth to colliders or have cloth apply forces to rigidbodies in the scene.</li>
+</ul>
+<!-- area:none -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UpgradeGuide5-Plugins.html"></a></span><div class="tip">Unity 5.0 中的插件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UpgradeGuide5-Shaders.html"></a></span><div class="tip">Unity 5.0 中的着色器</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

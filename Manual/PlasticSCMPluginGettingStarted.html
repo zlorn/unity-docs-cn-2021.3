@@ -1,0 +1,630 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Getting started with Plastic SCM - Unity 手册">
+<title>Getting started with Plastic SCM - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="The plugin is available via the  Version Control package in the Unity Package Manager.">
+<meta property="og:description" content="The plugin is available via the  Version Control package in the Unity Package Manager.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'PlasticSCMPluginGettingStarted';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/PlasticSCMPluginGettingStarted.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/PlasticSCMPluginGettingStarted.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/PlasticSCMPluginGettingStarted.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PlasticSCMPluginGettingStarted.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PlasticSCMPluginGettingStarted.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PlasticSCMPluginGettingStarted.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PlasticSCMPluginGettingStarted.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PlasticSCMPluginGettingStarted.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PlasticSCMPluginGettingStarted.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PlasticSCMPluginGettingStarted.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PlasticSCMPluginGettingStarted.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PlasticSCMPluginGettingStarted.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PlasticSCMPluginGettingStarted.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PlasticSCMPluginGettingStarted.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PlasticSCMPluginGettingStarted.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PlasticSCMPluginGettingStarted.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PlasticSCMPluginGettingStarted.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PlasticSCMPluginGettingStarted.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PlasticSCMPluginGettingStarted.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PlasticSCMPluginGettingStarted.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PlasticSCMPluginGettingStarted.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PlasticSCMPluginGettingStarted.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PlasticSCMPluginGettingStarted.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/PlasticSCMPluginGettingStarted.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/PlasticSCMPluginGettingStarted.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/PlasticSCMPluginGettingStarted.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/PlasticSCMPluginGettingStarted.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/PlasticSCMPluginGettingStarted.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/PlasticSCMPluginGettingStarted.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PlasticSCMPluginGettingStarted.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PlasticSCMPluginGettingStarted.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PlasticSCMPluginGettingStarted.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PlasticSCMPluginGettingStarted.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PlasticSCMPluginGettingStarted.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PlasticSCMPluginGettingStarted.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PlasticSCMPluginGettingStarted.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PlasticSCMPluginGettingStarted.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PlasticSCMPluginGettingStarted.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PlasticSCMPluginGettingStarted.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PlasticSCMPluginGettingStarted.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PlasticSCMPluginGettingStarted.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PlasticSCMPluginGettingStarted.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PlasticSCMPluginGettingStarted.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PlasticSCMPluginGettingStarted.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PlasticSCMPluginGettingStarted.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PlasticSCMPluginGettingStarted.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PlasticSCMPluginGettingStarted.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PlasticSCMPluginGettingStarted.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PlasticSCMPluginGettingStarted.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="EditorFeatures.html">编辑器功能</a></li>
+<li><a href="PlasticSCMPlugin.html">Plastic SCM plugin for Unity</a></li>
+<li>Getting started with Plastic SCM</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PlasticSCMAddIntegrations.html"></a></span><div class="tip">Add integrations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ExternalVersionControlSystemSupport.html"></a></span><div class="tip">将外部版本控制系统用于 Unity</div>
+</div>
+</div></div>
+<h1>Getting started with Plastic SCM</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>Installing the Plastic SCM plugin for Unity</h2>
+
+<p>The plugin is available via the <a href="https://docs.unity3d.com/Packages/com.unity.collab-proxy@1.7/manual/QuickStartGuide.html"> Version Control package</a> in the Unity Package Manager.</p>
+
+<p>You will need to uninstall the Plastic SCM Asset Store plugin from your Unity project in order to use Plastic SCM for Unity via the Version Control package. Here are the steps to do so:</p>
+
+<ol>
+<li>Navigate to your Assets/Plugins folder in your Unity Project.
+Delete the PlasticSCM folder.</li>
+<li>Re-open your Unity Project to recompile your packages.</li>
+</ol>
+
+<p><strong>Note</strong>: The <code>.plastic</code> workspace folder in the root of the Unity Project does not need to be removed as it can be read by the Version Control package.</p>
+
+<p>You can access Plastic SCM for Unity on any supported version by navigating to <strong>Window</strong> &gt; <strong>Plastic SCM</strong>. From there, you’ll walk through a simple onboarding process, which will guide your account setup and ensure that your Unity project is configured correctly.</p>
+
+<h3>Using the Plastic SCM plugin</h3>
+
+<p>Plastic SCM 插件会在 Unity 编辑器中启用 <strong>Plastic SCM</strong> 窗口。使用 <strong>Plastic SCM</strong> 窗口可管理文件更改，包括：</p>
+
+<ul>
+<li>将项目链接到源代码控制</li>
+<li>签入文件</li>
+<li>撤消更改</li>
+<li>比较文件修订</li>
+</ul>
+
+<p><strong>Plastic SCM</strong> 窗口会显示项目中新文件和更改的文件的列表。添加新文件或保存对现有文件的更改时，<strong>Plastic SCM</strong> 窗口会自动显示受影响的文件。</p>
+
+<p>要打开 <strong>Plastic SCM</strong> 窗口，请选择 <strong>Window</strong> &gt; <strong>Plastic SCM</strong>。</p>
+
+<h3>创建新工作空间</h3>
+
+<p>要在 Unity 项目中使用 Plastic SCM 插件，必须在 <strong>Plastic SCM</strong> 窗口或是在 Plastic SCM GUI 中为项目创建工作空间。</p>
+
+<p>要在 Unity 编辑器中为项目创建新工作空间，请执行以下操作：
+1.选择 <strong>Window</strong> &gt; <strong>Plastic SCM</strong>。
+2.指定项目的代码仓库名称、工作空间名称和路径。默认情况下会使用现有项目路径和名称。
+3.选择要将 Plastic SCM 用作开发者（适用于完整 Plastic SCM 功能）还是美术师（适用于简化工作流程）。</p>
+
+<p>创建了工作空间后，<strong>Plastic SCM</strong> 窗口便会显示项目文件。此外，Plastic SCM 会自动在工作空间（即项目文件夹）中创建一个<a href="#ignore">忽略文件</a>。</p>
+
+<h3>将项目文件提交到源代码控制</h3>
+
+<p>将项目连接到 Plastic SCM 工作空间后，<strong>Plastic SCM</strong> 窗口的 <strong>Pending Changes</strong> 选项卡会将所有现有项目文件都显示为 <strong>Added and private</strong>。要将这些文件包含在工作空间中，必须<a href="#checking">签入他们</a>。</p>
+
+<p>签入文件后，<strong>Pending changes</strong> 选项卡会刷新，不再列出已签入的文件。此外，Plastic SCM GUI 现在会显示：</p>
+
+<ul>
+<li>项目文件（在工作空间资源管理器中）</li>
+<li>最新签入（在 Changesets 视图中）</li>
+</ul>
+
+<p><a name="checking"></a></p>
+
+<h3>签入文件</h3>
+
+<p>要签入文件，请执行以下操作：</p>
+
+<p>1.选择 <strong>Window</strong> &gt; <strong>Plastic SCM</strong>。
+2.在 <strong>Plastic SCM</strong> 窗口中，选择要签入的文件。
+3.在文本字段中，输入注释以解释更改。
+4.选择 <strong>Checkin</strong>。</p>
+
+<p>更改会在 Plastic SCM GUI 的 <strong>Changesets</strong> 视图中列出。</p>
+
+<p><a name="ignore"></a></p>
+
+<h3>忽略文件</h3>
+
+<p>使用 Plastic SCM 插件创建工作空间时，它会自动在工作空间中创建一个忽略文件。这包含要从源代码控制中排除的文件类型和路径的默认列表。
+如果项目中还有其他文件要从共享代码仓库中排除，请将它们添加到忽略文件中：</p>
+
+<p>1.在 <strong>Plastic SCM</strong> 窗口中，右键单击要忽略的文件。
+2.选择 <strong>Add to ignored list</strong>。
+3.选择文件名。</p>
+
+<p>选择忽略的文件会从 <strong>Pending changes</strong> 列表中移除。
+可以忽略特定文件名、整个文件夹以及具有特定扩展名的所有文件。</p>
+
+<p>了解有关<a href="http://blog.plasticscm.com/2020/01/definitive-ignoreconf-for-unity-projects.html">忽略文件</a>的更多信息。</p>
+
+<h3>查看文件更改</h3>
+
+<p>要将更新的文件与以前的版本进行比较，请在 <strong>Plastic SCM</strong> 窗口中右键单击文件并选择 <strong>Diff</strong>。这会打开 <strong>Differences</strong> 视图，它会将代码仓库源与本地副本进行比较。这是纯文本视图。</p>
+
+<h3>恢复文件更改</h3>
+
+<p>如果在项目中进行了不想保留的更改，则可以恢复到以前的版本，即最新签入的版本。要恢复对文件的更改，请在 <strong>Pending changes</strong> 选项卡中选择文件并选择 <strong>Undo changes</strong>。</p>
+
+<h2>Plastic SCM 窗口</h2>
+
+<p>在 Unity 编辑器中使用 <strong>Plastic SCM</strong> 窗口可管理项目的版本控制。
+如果项目尚未连接到 Plastic SCM，则 <strong>Plastic SCM</strong> 窗口会显示用于创建新工作空间的视图。
+下表介绍了此视图的字段。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">字段</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Repository name</strong></td>
+	<td style="text-align:left;">代码仓库的名称。默认情况下，这是项目的名称。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Workspace name</strong></td>
+	<td style="text-align:left;">工作空间的名称。默认情况下，这是项目的名称。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Path on disk</strong></td>
+	<td style="text-align:left;">项目的路径。默认情况下，这是打开的项目的位置。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Developer</strong> 单选按钮</td>
+	<td style="text-align:left;">选择此选项以获得完整 Plastic SCM 功能，包括合并以及推送和拉取分支。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Artist</strong> 单选按钮</td>
+	<td style="text-align:left;">选择此选项可获得简化的文件签入工作流程（没有合并或多个分支）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Create workspace</strong> 按钮</td>
+	<td style="text-align:left;">使用提供的详细信息为项目创建工作空间。</td>
+</tr>
+</tbody>
+</table>
+
+<p>下表介绍了 Unity 编辑器中的 <strong>Plastic SCM</strong> 窗口。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">字段</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>跳转</strong></td>
+	<td style="text-align:left;">显示当前正在处理的工作空间分支。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Pending changes</strong> 选项卡</td>
+	<td style="text-align:left;">显示项目中更改的文件的列表。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Incoming changes</strong> 选项卡</td>
+	<td style="text-align:left;">显示项目的本地版本还没有的工作空间外部更改。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Launch branch explorer</strong>（仅限开发者模式）</td>
+	<td style="text-align:left;">单击可打开分支资源管理器。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Launch Plastic</strong>（仅限开发者模式）</td>
+	<td style="text-align:left;">单击可打开 Plastic SCM。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Configure Gluon</strong>（仅限美术师模式）</td>
+	<td style="text-align:left;">单击可在配置模式下打开 Plastic Gluon。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Launch Gluon</strong>（仅限美术师模式）</td>
+	<td style="text-align:left;">单击可打开 Plastic Gluon。</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Pending changes 选项卡</h3>
+
+<p><strong>Pending changes</strong> 选项卡会显示项目本地版本中的新文件和更改的文件。使用此选项卡可将文件签入 Plastic 工作空间、从版本控制中排除文件以及将更改的文件与以前签入的版本进行比较。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">字段</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Checkin changes</strong></td>
+	<td style="text-align:left;">将选定文件提交到工作空间。必须先在文本框中输入注释，然后才能签入更改。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Undo changes</strong></td>
+	<td style="text-align:left;">撤消对选定文件进行的本地更改。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Keep items locked</strong>（仅限美术师模式）</td>
+	<td style="text-align:left;">在签入操作后使项目保持锁定状态。例如，如果要对一个文件进行多个更改，但将它们作为单独更改分别签入，那么这会十分有用。要解锁项目，请取消选择此按钮。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Options</strong></td>
+	<td style="text-align:left;">单击可打开 <a href="#options">Options</a> 窗口。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>项</strong></td>
+	<td style="text-align:left;">文件的名称和路径。文件按更改类型进行分组，例如：<br>Changed<br>Deleted<br>Added</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Status</strong></td>
+	<td style="text-align:left;">文件的状态，例如：<br>Changed<br>Removed locally<br>Private</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Size</strong></td>
+	<td style="text-align:left;">文件的大小。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>扩展名</strong></td>
+	<td style="text-align:left;">文件扩展名。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>类型</strong></td>
+	<td style="text-align:left;">文件类型。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>修改日期</strong></td>
+	<td style="text-align:left;">更改的日期和时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Repository</strong></td>
+	<td style="text-align:left;">进行更改的代码仓库，即本地代码仓库或远程代码仓库（如果其他用户进行了更改）。</td>
+</tr>
+</tbody>
+</table>
+
+<p>了解有关 <a href="https://www.plasticscm.com/documentation/gui/plastic-scm-version-control-gui-guide#Chapter4:ThePendingchangesView">Pending changes</a> 视图的更多信息。</p>
+
+<h3>Incoming changes 选项卡</h3>
+
+<p><strong>Incoming changes</strong> 选项卡显示项目的本地版本还没有的工作空间的外部更改。
+使用此选项卡可从远程工作空间获取最新更改。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">字段</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Update workspace</strong></td>
+	<td style="text-align:left;">使用工作空间中的外部更改更新项目。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>路径</strong></td>
+	<td style="text-align:left;">文件路径和名称。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Last edited by</strong>（仅限美术师模式）</td>
+	<td style="text-align:left;">签入更改的用户。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Size</strong></td>
+	<td style="text-align:left;">文件的大小。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Date modified</strong>（仅限美术师模式）</td>
+	<td style="text-align:left;">文件最近签入的日期。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Author</strong>（仅限开发者模式）</td>
+	<td style="text-align:left;">签入更改的用户。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Details</strong>（仅限开发者模式）</td>
+	<td style="text-align:left;">描述更新操作将对相关更改执行的操作。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Resolution method</strong>（仅限开发者模式）</td>
+	<td style="text-align:left;">显示用户在解决目录冲突时选择的解决方法。</td>
+</tr>
+</tbody>
+</table>
+
+<p>了解有关 <a href="http://blog.plasticscm.com/2019/10/incoming-changes.html">Incoming Changes</a> 功能的更多信息。</p>
+
+<p><a name="options"></a></p>
+
+<h3>Options 窗口</h3>
+
+<p>使用 <strong>Options</strong> 窗口可控制 <strong>Plastic SCM</strong> 窗口的行为。
+下表介绍了 <strong>Plastic SCM</strong> 窗口的选项。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">字段</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2">
+<strong>What to find</strong> 选项卡</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show checkouts</strong></td>
+	<td style="text-align:left;">显示以下文件：<br>在 Plastic 中显式签出的文件<br>已移动的文件<br>正在进行合并的文件</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Find changed files in the workspace</strong></td>
+	<td style="text-align:left;">检查工作空间目录结构以通过时间戳识别更改的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Check the content to determine files as changed, not just timestamp</strong></td>
+	<td style="text-align:left;">使用更新的时间戳计算文件的哈希，以确保实际更改了文件内容。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">
+<strong>What to show</strong> 选项卡</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Auto-refresh</strong></td>
+	<td style="text-align:left;">Plastic 会根据需要自动刷新 Pending Changes 列表，以避免手动刷新。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show private files</strong></td>
+	<td style="text-align:left;">显示未提交到源代码控制的文件，例如新文件或工具生成的内容。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show ignored files</strong></td>
+	<td style="text-align:left;">显示添加到忽略列表中的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show hidden files</strong></td>
+	<td style="text-align:left;">显示添加到隐藏列表中的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show deleted files and directories</strong></td>
+	<td style="text-align:left;">显示在 Plastic 控制范围之外的工作空间中手动删除的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">
+<strong>Move detection</strong> 选项卡</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Find moved and renamed files and directories</strong></td>
+	<td style="text-align:left;">在工作空间中搜索可能的已重命名或已移动文件，例如，如果删除了一个文件并添加了另一个文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Match binary files only when they have the same extension</strong></td>
+	<td style="text-align:left;">将二进制文件的文件匹配限制为具有相同扩展名的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Match text files only when they have the same extension</strong></td>
+	<td style="text-align:left;">将文本文件的文件匹配限制为具有相同扩展名的文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Similarity percentage</strong></td>
+	<td style="text-align:left;">定义需要如何将相似文件视为已移动或已重命名。<br>对于文本文件，此百分比与内容相关。<br>对于二进制文件，此百分比与文件大小相关。<br>对于目录结构，这与子项相关（采用目录条目总数百分比形式）。</td>
+</tr>
+</tbody>
+</table>
+
+<p>了解有关 <a href="https://www.plasticscm.com/documentation/gui/plastic-scm-version-control-gui-guide#ChangingtheSetofDisplayedRevisions">Options</a> 窗口的更多信息。</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PlasticSCMAddIntegrations.html"></a></span><div class="tip">Add integrations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ExternalVersionControlSystemSupport.html"></a></span><div class="tip">将外部版本控制系统用于 Unity</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

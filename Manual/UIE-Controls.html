@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="控件 - Unity 手册">
+<title>控件 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2021.3/uploads/Main/uie-toggle-control.png">
+<meta name="description" content="控件是图形用户界面的元素，例如按钮、标签或复选框。它包括控件的视觉效果，以及对其进行操作及交互的脚本逻辑。">
+<meta property="og:description" content="控件是图形用户界面的元素，例如按钮、标签或复选框。它包括控件的视觉效果，以及对其进行操作及交互的脚本逻辑。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-Controls';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-Controls.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/UIE-Controls.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-Controls.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/UIE-Controls.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/UIE-Controls.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/UIE-Controls.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/UIE-Controls.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/UIE-Controls.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Controls.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Controls.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Controls.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Controls.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Controls.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Controls.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Controls.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Controls.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Controls.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Controls.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Controls.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Controls.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Controls.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Controls.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Controls.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Controls.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Controls.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Controls.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Controls.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Controls.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/UIE-Controls.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/UIE-Controls.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/UIE-Controls.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/UIE-Controls.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/UIE-Controls.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/UIE-Controls.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Controls.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Controls.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Controls.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Controls.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Controls.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Controls.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Controls.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Controls.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Controls.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Controls.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Controls.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Controls.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Controls.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Controls.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Controls.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Controls.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Controls.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Controls.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Controls.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Controls.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li>控件</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-IMGUI-Events.html"></a></span><div class="tip">IMGUI 事件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Controls-Reference.html"></a></span><div class="tip">控件参考</div>
+</div>
+</div></div>
+<h1>控件</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>控件是图形用户界面的元素，例如按钮、标签或复选框。它包括控件的视觉效果，以及对其进行操作及交互的脚本逻辑。</p>
+
+<p>在 UI 工具包中，控件类似于<a href="Prefabs.html">预制件</a>，将视觉元素和脚本结合到一个可在 UI 面板中使用的模板中。</p>
+
+<p>控件可以由单个视觉元素或多个视觉元素的组合组成。</p>
+
+<figure>
+<img src="../uploads/Main/uie-toggle-control.png" alt="开关控件">
+<figcaption>开关控件</figcaption>
+</figure>
+
+<p>例如，上面显示的 <code>Toggle</code> 控件包含三个元素：</p>
+
+<ul>
+<li>文本标签</li>
+<li>一个框图像</li>
+<li>一个复选标记的图像</li>
+</ul>
+
+<p><code>Toggle</code> 控件的实现定义了该控件的行为。它具有代表切换状态的内部值：true 或 false。当值发生变化时，此逻辑会交替显示复选标记图像。</p>
+
+<h2>向 UI 添加控件</h2>
+
+<p>要在 UI 中使用控件，您需要将其添加到 UI 层级结构中，称为<a href="UIE-VisualTree.html">视觉树</a>。您可以通过脚本、<a href="UIE-UXML.html">UXML</a> 或在 UI Builder 中添加控件。</p>
+
+<p>下面的代码片段展示了如何将 <code>Button</code> 控件添加到现有的视觉树中。</p>
+
+<pre><code class="lang-csharp">var newButton = new Button("Click me!");
+rootVisualElement.Add(newButton);
+</code></pre>
+
+<p>向 UI 层级结构添加控件时，布局引擎会自动处理大小和定位。有关自动布局的更多信息，请参阅<a href="UIE-LayoutEngine.html">布局引擎</a>。</p>
+
+<p>您还可以手动覆盖视觉元素的大小和位置。要了解有关手动控制位置的更多信息，请参阅<a href="UIE-VisualTree.html">视觉树</a>页面。</p>
+
+<p>UI 工具包中的所有视觉元素都使用样式来定义其属性。您可以通过三种方式修改样式属性：</p>
+
+<ul>
+<li>创建 <a href="UIE-USS.html">USS 样式表</a>。</li>
+<li>在 UI Builder 中应用适当的属性。</li>
+<li>通过代码修改元素的样式属性。</li>
+</ul>
+
+<h2>与控件交互</h2>
+
+<p>控件是交互式的，它代表了一个可以更改的值。例如，<code>FloatField</code> 代表一个浮点值。您可以使用代码对更改做出反应，例如：</p>
+
+<ul>
+<li>注册一个回调。</li>
+<li>直接读取控制值。</li>
+<li>数据绑定。</li>
+</ul>
+
+<h2>控件值的属性</h2>
+
+<p>如果控件表示可修改的值，则它包含一个 <code>value</code> 属性。脚本可以使用 <code>value</code> 属性直接访问控件的值。下面的代码片段创建了一个 <code>Toggle</code> 控件和一个 <code>Button</code> 控件。当您单击按钮时，该开关的值会翻转。</p>
+
+<pre><code class="lang-csharp">// 创建一个开关并注册回调
+m_MyToggle = new Toggle("Test Toggle") { name = "My Toggle" };
+rootVisualElement.Add(m_MyToggle);
+
+// 创建切换开关值的按钮
+Button button01 = new Button() { text = "Toggle" };
+button01.clicked += () =&gt;
+{
+    m_MyToggle.value = !m_MyToggle.value;
+};
+rootVisualElement.Add(button01);
+</code></pre>
+
+<p>要了解有关特定控件的属性的更多信息，请参阅 <a href="UIE-Controls-Reference.html">UI 工具包控件参考</a>。</p>
+
+<h2>注册一个回调。</h2>
+
+<p>所有具有 <code>value</code> 属性的内置控件都会在值发生变化时发送一个事件。代码可以注册一个回调来接收这个事件。下面的代码片段展示了如何创建一个 <code>Toggle</code> 控件并注册一个回调：</p>
+
+<pre><code class="lang-csharp">// 创建一个开关并注册回调
+m_MyToggle = new Toggle("Test Toggle") { name = "My Toggle" };
+m_MyToggle.RegisterValueChangedCallback((evt) =&gt; { Debug.Log("Change Event received"); });
+rootVisualElement.Add(m_MyToggle);
+</code></pre>
+
+<p>要了解有关回调和事件的更多信息，请参阅<a href="UIE-Events-Handling.html">事件处理</a>。</p>
+
+<h2>数据绑定</h2>
+
+<p>控件可以直接绑定到对象或序列化属性。例如，一个<code>FloatField</code> 控件可绑定到属于某个 <code>MonoBehaviour</code> 的公共浮点变量。当控件绑定到该属性时，它会自动显示该属性的值。当用户修改该控件时，属性值会更新。</p>
+
+<p>同样，当属性值通过代码更改时，UI 会显示更新后的值。这种双向连接在创建自定义 Inspector 时很有用。</p>
+
+<p>要了解有关数据绑定的更多信息，请参阅<a href="UIE-Binding.html">绑定</a> 页面。</p>
+
+<p>并非所有控件都是可绑定的。要查看所有内置控件的列表以及它们是否支持绑定，请参阅 <a href="UIE-Controls-Reference.html">UI 工具包控件参考</a>。</p>
+
+<h2>创建自定义控件</h2>
+
+<p>UI 工具包允许您创建自定义控件。这使得创建复杂控件或为用户界面元素实现自定义逻辑成为可能。
+控件直接派生自 <code>VisualElement</code> 或 <code>VisualElement</code> 的子类，例如 <code>TextElement</code>。它们还可能添加实现控件的行为的操控器。例如，<code>Button</code> 控件添加了一个<code>Clickable</code> 操控器。</p>
+
+<h2>内置控件</h2>
+
+<p>Unity 包含大量标准控件，例如标签、文本字段和开关。某些控件仅在编辑器中可用。
+有关 UI 工具包的内置控件的完整列表，请参阅 <a href="UIE-Controls-Reference.html">UI 工具包控件参考</a>。</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-IMGUI-Events.html"></a></span><div class="tip">IMGUI 事件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Controls-Reference.html"></a></span><div class="tip">控件参考</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

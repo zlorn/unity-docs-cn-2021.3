@@ -1,0 +1,351 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="USS 自定义属性（变量） - Unity 手册">
+<title>USS 自定义属性（变量） - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="USS 变量，也称为自定义属性，定义了可以在其他 USS 规则中重用的值。您可以为任何类型的 USS 属性创建变量。">
+<meta property="og:description" content="USS 变量，也称为自定义属性，定义了可以在其他 USS 规则中重用的值。您可以为任何类型的 USS 属性创建变量。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-USS-CustomProperties';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-USS-CustomProperties.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/UIE-USS-CustomProperties.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/UIE-USS-CustomProperties.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-USS-CustomProperties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-USS-CustomProperties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-USS-CustomProperties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-USS-CustomProperties.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-USS-CustomProperties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-USS-CustomProperties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-USS-CustomProperties.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-USS-CustomProperties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-USS-CustomProperties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-USS-CustomProperties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-USS-CustomProperties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-USS-CustomProperties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-USS-CustomProperties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-USS-CustomProperties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-USS-CustomProperties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-USS-CustomProperties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-USS-CustomProperties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-USS-CustomProperties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-USS-CustomProperties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-USS-CustomProperties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/UIE-USS-CustomProperties.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/UIE-USS-CustomProperties.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/UIE-USS-CustomProperties.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/UIE-USS-CustomProperties.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/UIE-USS-CustomProperties.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/UIE-USS-CustomProperties.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-USS-CustomProperties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-USS-CustomProperties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-USS-CustomProperties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-USS-CustomProperties.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-USS-CustomProperties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-USS-CustomProperties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-USS-CustomProperties.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-USS-CustomProperties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-USS-CustomProperties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-USS-CustomProperties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-USS-CustomProperties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-USS-CustomProperties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-USS-CustomProperties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-USS-CustomProperties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-USS-CustomProperties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-USS-CustomProperties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-USS-CustomProperties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-USS-CustomProperties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-USS-CustomProperties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-USS-CustomProperties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-USS.html">Style UI with USS</a></li>
+<li>USS 自定义属性（变量）</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Transitions.html"></a></span><div class="tip">USS transition</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-USS-UnityVariables.html"></a></span><div class="tip">内置 Unity 变量</div>
+</div>
+</div></div>
+<h1>USS 自定义属性（变量）</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>USS 变量，也称为自定义属性，定义了可以在其他 USS 规则中重用的值。您可以为任何类型的 USS 属性创建变量。</p>
+
+<p>要创建 USS 变量，请在其名称前加上双连字符（<code>--</code>）。</p>
+
+<pre><code class="lang-css">--color-1: red;
+</code></pre>
+
+<p>要在另一个 USS 规则中使用 USS 变量值，请使用 <code>var()</code> 函数来调用它。</p>
+
+<pre><code class="lang-css">var(--color-1);
+</code></pre>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<code>var()</code> 函数还接受一个可选的默认值（请参阅下方的<a href="#specifying-default-values">指定默认值</a>）。</td>
+</tr>
+</tbody>
+</table>
+
+<p>定义变量后，您可以根据需要在任意数量的其他 USS 属性中使用该变量。当您更新该变量时，所有使用它的 USS 属性也会更新。</p>
+
+<p>例如，以下 USS 代码片段定义了一个声明两个颜色变量的样式规则，以及两个使用这些变量的样式规则。</p>
+
+<pre><code class="lang-css">:root {
+  --color-1: blue;
+  --color-2: yellow;
+}
+
+.paragraph-regular {
+  color: var(--color-1);
+  background: var(--color-2);
+  padding: 2px;
+  }
+
+.paragraph-reverse {
+  color: var(--color-2);
+  background: var(--color-1);
+  padding: 2px;
+  }
+</code></pre>
+
+<p>要更新颜色方案，您只需更改两个变量值而不是四个颜色值。</p>
+
+<p>使用变量可以更轻松地管理复杂 UI 的样式，其中多个规则（有时在不同的样式表中）使用相同的值。</p>
+
+<p><a name="specifying-default-values"></a></p>
+
+<h2>指定默认值</h2>
+
+<p><code>var()</code> 函数接受一个可选的默认值。UI 系统在无法解析变量时使用默认值。例如，如果您从样式表中删除一个变量，但忘记删除对它的引用。</p>
+
+<p>要为变量指定默认值，请将其添加在变量值之后，并以逗号 <code>,</code> 分隔。以下 USS 代码片段调用了 <code>--color-1</code> 变量，但如果 UI 系统无法解析它，它会使用红色的十六进制值 (<code>#FF0000</code>)。</p>
+
+<pre><code class="lang-css">var(--color-1, #FF0000);
+</code></pre>
+
+<h2>内置 Unity 变量</h2>
+
+<p>Unity 内置样式表定义了为编辑器界面设置默认值的 USS 变量。您可以在自己的样式表中使用这些变量，确保自定义编辑器扩展与 Unity 样式相匹配。有关详细信息，请参阅<a href="UIE-USS-UnityVariables.html">内置 Unity 变量</a>。</p>
+
+<h2>与 CSS 的区别</h2>
+
+<p>变量在 USS 中的工作方式与在 CSS 中的工作方式几乎完全相同。有关 CSS 变量的详细信息，请参阅 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">MDN 文档</a>。</p>
+
+<h3>从其他函数调用 USS 变量</h3>
+
+<p>某些 Web 浏览器支持使用其他函数内部的 <code>var()</code> 函数，如下面的属性声明：</p>
+
+<pre><code class="lang-css">background-color: rgb(var(--red), 0, 0);
+</code></pre>
+
+<p>Unity 不支持 <code>var()</code> 的这种用法。</p>
+
+<h3>在根选择器中声明变量</h3>
+
+<p>CSS 常见做法是在 <code>:root</code> 伪类选择器中声明 “global” 变量。因为网页中的每个元素都继承自 <code>:root</code>，所以 CSS 样式表中的每个选择器都可以调用其中声明的变量。</p>
+
+<p>在 Unity 中，在 <code>:root</code> 中声明变量适用于编辑器窗口和运行时面板，前提是您将样式表附加到面板或编辑器窗口的根视觉元素。它不适用于 Inspector UI。</p>
+
+<p>在 Inspector 中，<code>:root</code> 伪类仅在 Inspector 窗口的根 VisualElement 上处于活动状态。您附加样式表的子树在 Inspector 层级结构中要低得多。因此，<code>:root</code> 选择器永远不会匹配子树的任何部分。</p>
+
+<h4>模拟 :root 用于自定义 Inspector UI</h4>
+
+<p>您可以使用 USS 类选择器代替自定义 Inspector 中的 <code>:root</code> 选择器。创建一个 USS 类，以在其中声明您的变量，并将其应用于您有权访问的层级结构中的最高元素。</p>
+
+<p>例如，以下 USS 代码片段定义了以下类：</p>
+
+<ul>
+<li>
+<code>.root</code> 声明了一个变量。</li>
+<li>
+<code>.label1</code> 调用该变量。</li>
+</ul>
+
+<pre><code class="lang-css">.root {
+    --color1: rgb(25, 255, 75);
+}
+
+.label1 {
+    color: var(--color1);
+}
+</code></pre>
+
+<p>以下 UXML 代码片段创建一个简单的容器元素并为其分配根类。容器有一个子元素，一个标签，为其分配的类是 <code>label1</code>。</p>
+
+<p>在 UXML 中：</p>
+
+<pre><code class="lang-xml">&lt;UXML xmlns="UnityEngine.UIElements"&gt;
+    &lt;VisualElement class="root"&gt;
+        &lt;!-- Including, for example...--&gt;
+        &lt;Label class="label1" text="Label text"/&gt;
+    &lt;/VisualElement&gt;
+&lt;/UXML&gt;
+</code></pre>
+
+<p>因为 Label 继承自容器，它的样式可以调用容器样式中定义的任何变量。</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Transitions.html"></a></span><div class="tip">USS transition</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-USS-UnityVariables.html"></a></span><div class="tip">内置 Unity 变量</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

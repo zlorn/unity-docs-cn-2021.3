@@ -1,0 +1,355 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="﻿Windows 调试 - Unity 手册">
+<title>﻿Windows 调试 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity provides several options for debugging on Windows for forensic or live debugging of game and editor processes.">
+<meta property="og:description" content="Unity provides several options for debugging on Windows for forensic or live debugging of game and editor processes.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'WindowsDebugging';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/WindowsDebugging.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/WindowsDebugging.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/WindowsDebugging.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/WindowsDebugging.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/WindowsDebugging.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/WindowsDebugging.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/WindowsDebugging.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/WindowsDebugging.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WindowsDebugging.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WindowsDebugging.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WindowsDebugging.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WindowsDebugging.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WindowsDebugging.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WindowsDebugging.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WindowsDebugging.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WindowsDebugging.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WindowsDebugging.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WindowsDebugging.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WindowsDebugging.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WindowsDebugging.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WindowsDebugging.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WindowsDebugging.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WindowsDebugging.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WindowsDebugging.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WindowsDebugging.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WindowsDebugging.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WindowsDebugging.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WindowsDebugging.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/WindowsDebugging.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/WindowsDebugging.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/WindowsDebugging.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/WindowsDebugging.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/WindowsDebugging.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/WindowsDebugging.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WindowsDebugging.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WindowsDebugging.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WindowsDebugging.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WindowsDebugging.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WindowsDebugging.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WindowsDebugging.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WindowsDebugging.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WindowsDebugging.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WindowsDebugging.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WindowsDebugging.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WindowsDebugging.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WindowsDebugging.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WindowsDebugging.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WindowsDebugging.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WindowsDebugging.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WindowsDebugging.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WindowsDebugging.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WindowsDebugging.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WindowsDebugging.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WindowsDebugging.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="Windows.html">Windows</a></li>
+<li><a href="WindowsGeneral.html">Windows 通用</a></li>
+<li>﻿Windows 调试</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="VisualStudioprojectgenerationWindows.html"></a></span><div class="tip">为 Windows 独立平台的 Visual Studio 项目生成</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WindowsLowIntegrity.html"></a></span><div class="tip">Windows 低完整性</div>
+</div>
+</div></div>
+<h1>Windows 调试</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity provides several options for debugging on Windows for forensic or live debugging of game and editor processes.</p>
+
+<h3>本机与托管调试</h3>
+
+<p>Unity allows two types of debugging: the native C++ debugging and the C# managed debugging.</p>
+
+<h4>本机调试</h4>
+
+<p>Native Debugging stores symbols in pdb files for the associated binary files, such as exe and dll.</p>
+
+<h4>托管调试</h4>
+
+<p>On Windows, the standard .NET managed symbols are stored in pdb files.</p>
+
+<h3>符号</h3>
+
+<p>Unity provides a symbol store at http://symbolserver.unity3d.com/. Much like the Microsoft’s symbol store, you can use the Unity server URL in Windows Debugger (WinDbg), or Visual Studio 2019 and later for automatic symbol resolution and downloading. </p>
+
+<h4>WinDbg Setup</h4>
+
+<p>To add a symbol store on WinDbg, use the .sympath command: </p>
+
+<blockquote>
+<p><code>.sympath+ SRV*c:\symbols-cache*http://symbolserver.unity3d.com/</code></p>
+</blockquote>
+
+<p>其中：</p>
+
+<blockquote>
+<p><code>.sympath+</code><br>
+The + addition, leaves the existing symbol path alone, and appends this symbol store lookup.</p>
+
+<p><code>SRV*c:\symbols-cache</code><br>
+The SRV indicates a remote server to fetch from, while the <code>c:\symbols</code> is a local path to cache the downloaded symbols and to look there first before downloading again.</p>
+
+<p><code>*http://symbolserver.unity3d.com/</code><br>
+The path to the symbol store to fetch from.</p>
+</blockquote>
+
+<h4>Visual Studio 设置</h4>
+
+<ol>
+<li>Go to <strong>Tools &gt; Options</strong>.</li>
+<li>Expand the <strong>Debugging</strong> section and then select <strong>Symbols</strong>.</li>
+<li>Specify a cache directory if not already specified.</li>
+<li>Add a <strong>Symbol file (.pdb) location</strong> (http://symbolserver.unity3d.com/).</li>
+</ol>
+
+<h3>实时调试</h3>
+
+<p>Live Debugging is the scenario of attaching a debugger to a process that’s running normal, or to a process where an exception has been caught. For the debugger to know what’s going on, the symbols must be included in the build using the steps above. Additionally, the game executable is named according to your game name, so the debugger may have issues finding the correct <code>pdb</code> if it doesn’t have access to the renamed executable.</p>
+
+<h4>设置自动异常调试</h4>
+
+<p>On Windows, Microsoft sets up automatically on application crashes to go to Dr Watson/Error Reporting to Microsoft. However, if you have Visual Studio or WinDbg installed, Microsoft provides an option to instead opt to <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb204634(v=vs.85).aspx">debug the crashes</a>.<br>
+For ease of installing, follow this registry file contents to install: </p>
+
+<pre><code>Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+"Auto"="1"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug]
+ "Auto"="1"
+</code></pre>
+
+<p>Additional content for Editor debugging:</p>
+
+<blockquote>
+<p><code>Unity.exe -dbgbreak</code><br>
+Will launch Unity and immediately offer a debugger to connect if the automatic crash handling is set up.</p>
+</blockquote>
+
+<h3>事后分析/取证调试</h3>
+
+<p>Windows provides facilities to investigate crash dump files (.dmp or .mdmp). Depending on the type of crash dump, you might either see stack information or the entire process memory. The contents of the dump file determine the cause of the crash, which typically has at least a stack to investigate (as long as it’s a valid stack).</p>
+
+<p>To investigate a dump file, you can load it up via Visual Studio or WinDbg. While Visual Studio is a more friendly tool to use, it’s slightly limited than WinDbg.</p>
+
+<h3>调试提示和技巧</h3>
+
+<p>When running Visual Studio, you can use the <a href="https://github.com/Unity-Technologies/UnityMixedCallstack">UnityMixedCallstack</a> extension for VS Code by Unity that makes debugging even easier.</p>
+
+<h4>在本机托管的异常</h4>
+
+<p>A <code>NullReferenceException</code> typically looks like this:</p>
+
+<pre><code>    1b45558c()  
+&gt;   mono-2.0-bdwgc.dll!malloc(unsigned int size=12)  Line 163 + 0x5f bytes  C  
+    mono-2.0-bdwgc.dll!g_hash_table_insert_replace(_GHashTable * hash=0x065c3960, void * key=0x0018cba4, void * value=0x0018cb8c, int replace=457528232)  Line 204 + 0x7 bytes  C  
+    mono-2.0-bdwgc.dll!mono_jit_runtime_invoke(_MonoMethod * method=0x242bf8b0, void * obj=0x065c3960, void ** params=0x0018cba4, MonoObject * * exc=0x0018cb8c)  Line 4889 + 0xc bytes C  
+</code></pre>
+
+<h4>查看托管堆栈帧</h4>
+
+<p>再次采用上一个示例：</p>
+
+<pre><code>    1b45558c()  
+&gt;   mono-2.0-bdwgc.dll!malloc(unsigned int size=12)  Line 163 + 0x5f bytes  C  
+    mono-2.0-bdwgc.dll!g_hash_table_insert_replace(_GHashTable * hash=0x065c3960, void * key=0x0018cba4, void * value=0x0018cb8c, int replace=457528232)  Line 204 + 0x7 bytes  C  
+    mono-2.0-bdwgc.dll!mono_jit_runtime_invoke(_MonoMethod * method=0x242bf8b0, void * obj=0x065c3960, void ** params=0x0018cba4, MonoObject * * exc=0x0018cb8c)  Line 4889 + 0xc bytes C  
+</code></pre>
+
+<p>The lines without any information are managed frames. There is, however, a way to get the managed stack information: mono has a builtin function called <code>mono_pmip</code>, which accepts the address of a stack frame and returns a char* with information. You can invoke <code>mono_pmip</code> in the Visual Studio immediate window:</p>
+
+<blockquote>
+<p><code>?(char*){,,mono-2.0-bdwgc.dll}mono_pmip((void*)0x1b45558c)</code><br>
+0x26a296c0 “ Tiles:OnPostRender () + 0x1e4 (1B4553A8 1B4555DC) [065C6BD0 - Unity Child Domain]”`</p>
+</blockquote>
+
+<p><strong>Note:</strong> This only works where <code>mono-2.0-bdwgc.dll</code> symbols are loaded properly.</p>
+
+<h4>强制应用程序创建转储</h4>
+
+<p>Ocassionally, the application doesn’t crash with the debugger attached, or an application crashes on a remote device where the debugger isn’t available. However, you can still get useful information if you can get the dump file - follow the below steps to do so.</p>
+
+<p><strong>Note:</strong> These instructions apply to both <strong>Windows Standalone</strong> and <strong>Universal Windows</strong> platforms when running on desktop.</p>
+
+<ol>
+<li>Open the registry.</li>
+<li>Navigate to <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting</code>.</li>
+<li>Create <code>LocalDumps</code> folder if it’s not there.</li>
+<li>Add following keys:
+
+<ul>
+<li><code>"DumpFolder"=&amp;lt;FolderPath goes here&gt; , e.g., C:\Temp</code></li>
+<li><code>"DumpCount"=dword:00000010</code></li>
+<li><code>"DumpType"=dword:00000002</code></li>
+</ul>
+</li>
+<li>Launch the application via the Universal Windows Platform or Windows Standalone executable.</li>
+<li>Reproduce the crash. The dump file is created in the folder you specified earlier. You can open the dump file with Visual Studio or WinDbg.</li>
+</ol>
+<!-- area:platforms -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="VisualStudioprojectgenerationWindows.html"></a></span><div class="tip">为 Windows 独立平台的 Visual Studio 项目生成</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WindowsLowIntegrity.html"></a></span><div class="tip">Windows 低完整性</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

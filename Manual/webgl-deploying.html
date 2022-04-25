@@ -1,0 +1,405 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Compressed builds and server configuration - Unity 手册">
+<title>Compressed builds and server configuration - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2021.3/uploads/Main/WebGLPublishingWindow.png">
+<meta name="description" content="要部署 WebGL 构建，必须配置服务器并确保使用正确的响应标头，以便浏览器可以接收正确的响应并正确处理响应。">
+<meta property="og:description" content="要部署 WebGL 构建，必须配置服务器并确保使用正确的响应标头，以便浏览器可以接收正确的响应并正确处理响应。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'webgl-deploying';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/webgl-deploying.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/webgl-deploying.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/webgl-deploying.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/webgl-deploying.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/webgl-deploying.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/webgl-deploying.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/webgl-deploying.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/webgl-deploying.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/webgl-deploying.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/webgl-deploying.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/webgl-deploying.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/webgl-deploying.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/webgl-deploying.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/webgl-deploying.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/webgl-deploying.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/webgl-deploying.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/webgl-deploying.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/webgl-deploying.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/webgl-deploying.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/webgl-deploying.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/webgl-deploying.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/webgl-deploying.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/webgl-deploying.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/webgl-deploying.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/webgl-deploying.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/webgl-deploying.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/webgl-deploying.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/webgl-deploying.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/webgl-deploying.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/webgl-deploying.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/webgl-deploying.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/webgl-deploying.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/webgl-deploying.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/webgl-deploying.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/webgl-deploying.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/webgl-deploying.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/webgl-deploying.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/webgl-deploying.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/webgl-deploying.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/webgl-deploying.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/webgl-deploying.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/webgl-deploying.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/webgl-deploying.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/webgl-deploying.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/webgl-deploying.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/webgl-deploying.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/webgl-deploying.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/webgl-deploying.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/webgl-deploying.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/webgl-deploying.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/webgl-deploying.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/webgl-deploying.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/webgl-deploying.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/webgl-deploying.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="webgl.html">WebGL</a></li>
+<li><a href="webgl-building-distribution.html">Building and distributing a WebGL project</a></li>
+<li>Compressed builds and server configuration</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="webgl-canvas-size.html"></a></span><div class="tip">Configure a WebGL Canvas size</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="webgl-server-configuration-code-samples.html"></a></span><div class="tip">Server configuration code samples</div>
+</div>
+</div></div>
+<h1>Compressed builds and server configuration</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>要部署 WebGL 构建，必须配置服务器并确保使用正确的响应标头，以便浏览器可以接收正确的响应并正确处理响应。</p>
+
+<p>Unity 中有两个主要设置会影响服务器的设置方式：</p>
+
+<ul>
+<li>
+<strong>Compression Format</strong>：确定 Unity 在构建步骤中如何压缩文件。</li>
+<li>
+<strong>Decompression Fallback</strong>：确定当构建在浏览器中运行时 Unity 如何处理下载的文件。</li>
+</ul>
+
+<h2>压缩格式<a name="content_encoding_header"></a>
+</h2>
+
+<p>从 WebGL Player Settings 窗口（菜单：<strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>），然后选择 <strong>WebGL</strong> 并展开 <strong>Publishing Settings</strong> 部分）：</p>
+
+<figure>
+<img src="../uploads/Main/WebGLPublishingWindow.png" alt="WebGL Publishing 窗口的图像 ">
+<figcaption>WebGL Publishing 窗口的图像 </figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">压缩方法</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">gzip</td>
+	<td style="text-align:left;">这是默认选项。gzip 文件比 Brotli 文件更大，但构建速度更快，且所有浏览器都基于 HTTP 和 HTTPS 实现此格式的本机支持。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Brotli</td>
+	<td style="text-align:left;">Brotli 压缩提供最佳压缩比。Brotli 压缩文件小于 gzip，但需要更长的压缩时间，因此会增加发布版本的迭代时间。Chrome 和 Firefox 仅原生支持基于 HTTPS 的 Brotli 压缩。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Disabled</td>
+	<td style="text-align:left;">禁用压缩。如果要在后期处理脚本中实现您自己的压缩，请使用此选项。如果计划在托管服务器上使用静态压缩，也应该使用此选项。</td>
+</tr>
+</tbody>
+</table>
+
+<p>有关浏览器对所选压缩方法的支持的更多信息，请参阅有关 <a href="webgl-browsercompatibility.html">WebGL 浏览器兼容性</a>的文档。</p>
+
+<h2>Web 服务器配置</h2>
+
+<p>您可能需要调整服务器配置以匹配特定构建设置。具体而言，如果已使用其他服务器端配置来压缩托管的文件（这可能会干扰此设置），可能会出现问题。
+为了使浏览器在下载应用程序期间以原生方式执行解压缩，需要在服务器响应中附加一个 <a href="#content_encoding_header">Content-Encoding 标头</a>。该标头必须与 Unity 在构建时使用的压缩类型相对应。
+有关代码示例，请参阅<a href="webgl-server-configuration-code-samples.html">服务器配置代码示例</a>。</p>
+
+<h2>解压缩回退</h2>
+
+<p>解压缩回退选项使 Unity 能够自动将 JavaScript 解压缩器嵌入到您的构建中。该解压缩器与您选择的压缩方法相对应，它在浏览器无法解压缩内容时执行解压缩。</p>
+
+<h3>启用解压缩回退</h3>
+
+<p>从 <strong>Player Settings</strong> 窗口启用解压缩回退（菜单：<strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>，然后选择 <strong>WebGL</strong> 并展开 <strong>Publishing Settings</strong> 部分）：</p>
+
+<p>如果启用解压缩回退，Unity 会向构建文件添加一个 <code>.unityweb</code> 扩展名。
+如果不熟悉服务器配置，或者无法使用服务器配置，应考虑使用 <strong>Decompression Fallback</strong>。</p>
+
+<p><strong>注意</strong>：使用此选项会导致加载器大小增大和构建文件加载方案的效率降低。</p>
+
+<h3>禁用解压缩回退</h3>
+
+<p>默认情况下，<strong>Decompression Fallback</strong> 选项处于禁用状态。因此，默认情况下，构建文件的扩展名与您选择的压缩方法相对应。</p>
+
+<p>有两种压缩方法可供选择：gzip 或 Brotli。有关更多信息，请参阅<a href="#content_encoding_header">压缩格式</a>部分。</p>
+
+<p>要让浏览器在 Unity 构建文件下载时进行原生解压缩，需要配置 Web 服务器以使用适当的 HTTP 标头提供压缩文件。这称为原生浏览器解压缩。它的优点是比 JavaScript 解压缩回退更快，可以减少应用程序的启动时间。</p>
+
+<p>原生浏览器解压缩的设置过程取决于 Web 服务器。有关代码示例，请参阅<a href="webgl-server-configuration-code-samples.html">服务器配置代码示例</a>。</p>
+
+<h2>内容编码标头 <a name="content_encoding_header"></a>
+</h2>
+
+<p>Content-Encoding 标头告诉浏览器 Unity 用于压缩文件的压缩类型。这样，浏览器可以原生解压缩文件。</p>
+
+<p>将 Content-Encoding 响应标头设置为在 Player Settings 中选择的压缩方法。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">压缩方法</th>
+	<th style="text-align:left;">文件扩展名</th>
+	<th style="text-align:left;">响应标头</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">gzip</td>
+	<td style="text-align:left;">.gz</td>
+	<td style="text-align:left;"><code>Content-Encoding: gzip</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;">Brotli</td>
+	<td style="text-align:left;">.br</td>
+	<td style="text-align:left;"><code>Content-Encoding: br</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2>WebAssembly 串流（更高级别的标头）</h2>
+
+<p>WebAssembly 串流允许浏览器在下载代码的同时编译 WebAssembly 代码。这可以显著缩短加载时间。</p>
+
+<p>为了进行 WebAssembly 串流编译，服务器需要返回 <code>application/wasm</code> MIME 类型的 WebAssembly 文件。
+要使用 WebAssembly 串流，需要使用带 <code>Content-Type: application/wasm</code> 响应标头的 WebAssembly 文件。
+ Content-Type 标头告诉服务器内容是什么媒体类型。对于 WebAssembly 文件，该值应该设置为 <code>application/wasm</code>。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">文件扩展名</th>
+	<th style="text-align:left;">响应标头</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">.wasm、.wasm.gz、.wasm.br</td>
+	<td style="text-align:left;"><code>Content-Type: application/wasm</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>注意</strong>：WebAssembly 串流不能采用 JavaScript 解压缩（如果启用了 Decompression Fallback 选项）。这种情况下，下载的 WebAssembly 文件必须首先通过 JavaScript 解压缩器，因此浏览器无法在下载过程中进行串流。</p>
+
+<h2>附加标头</h2>
+
+<p>如果文件包含 JavaScript，则应添加 <code>application/javascript</code> Content-Type 标头。某些服务器可能会自动包含此内容，另一些服务器则不会。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">文件扩展名</th>
+	<th style="text-align:left;">响应标头</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">.js、.js.gz、js.br</td>
+	<td style="text-align:left;"><code>Content-Type: application/javascript</code></td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<ul>
+<li><span class="page-history">在 2020.1 中更新了服务器配置帐户的页面</span></li>
+<li>2019–09–04 <span class="page-history"> 在 2019.2 中添加了 WebAssembly 串流 </span>
+</li>
+<li><span class="page-history">5.6 版更新</span></li>
+</ul>
+<!-- area:platforms -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="webgl-canvas-size.html"></a></span><div class="tip">Configure a WebGL Canvas size</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="webgl-server-configuration-code-samples.html"></a></span><div class="tip">Server configuration code samples</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

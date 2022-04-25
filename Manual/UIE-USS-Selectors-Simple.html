@@ -1,0 +1,522 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="简单选择器 - Unity 手册">
+<title>简单选择器 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2021.3/uploads/Main/uss-selectors-nostyle.png">
+<meta name="description" content="USS 支持以下简单选择器：">
+<meta property="og:description" content="USS 支持以下简单选择器：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-USS-Selectors-Simple';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-USS-Selectors-Simple.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/UIE-USS-Selectors-Simple.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/UIE-USS-Selectors-Simple.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-USS-Selectors-Simple.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-USS-Selectors-Simple.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-USS-Selectors-Simple.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-USS-Selectors-Simple.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-USS-Selectors-Simple.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-USS-Selectors-Simple.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-USS-Selectors-Simple.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-USS-Selectors-Simple.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-USS-Selectors-Simple.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-USS-Selectors-Simple.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-USS-Selectors-Simple.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-USS-Selectors-Simple.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-USS-Selectors-Simple.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-USS-Selectors-Simple.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-USS-Selectors-Simple.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-USS-Selectors-Simple.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-USS-Selectors-Simple.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-USS-Selectors-Simple.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-USS-Selectors-Simple.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-USS-Selectors-Simple.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/UIE-USS-Selectors-Simple.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/UIE-USS-Selectors-Simple.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/UIE-USS-Selectors-Simple.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/UIE-USS-Selectors-Simple.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/UIE-USS-Selectors-Simple.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/UIE-USS-Selectors-Simple.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-USS-Selectors-Simple.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-USS-Selectors-Simple.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-USS-Selectors-Simple.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-USS-Selectors-Simple.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-USS-Selectors-Simple.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-USS-Selectors-Simple.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-USS-Selectors-Simple.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-USS-Selectors-Simple.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-USS-Selectors-Simple.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-USS-Selectors-Simple.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-USS-Selectors-Simple.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-USS-Selectors-Simple.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-USS-Selectors-Simple.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-USS-Selectors-Simple.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-USS-Selectors-Simple.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-USS-Selectors-Simple.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-USS-Selectors-Simple.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-USS-Selectors-Simple.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-USS-Selectors-Simple.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-USS-Selectors-Simple.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-USS.html">Style UI with USS</a></li>
+<li><a href="UIE-USS-Selectors.html">USS 选择器</a></li>
+<li>简单选择器</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-USS-Selectors.html"></a></span><div class="tip">USS 选择器</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-USS-Selectors-Complex.html"></a></span><div class="tip">Complex Selectors</div>
+</div>
+</div></div>
+<h1>简单选择器</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>USS 支持以下简单选择器：</p>
+
+<ul>
+<li>
+<strong>C# 类型</strong>选择器匹配特定 C# 类型的元素</li>
+<li>
+<strong>USS 类</strong>选择器匹配具有指定 USS 类的元素</li>
+<li>
+<strong>名称</strong>选择器匹配具有指定 <code>name</code> 属性的元素。</li>
+<li>
+<strong>通用选择器</strong>匹配任何元素</li>
+</ul>
+
+<p>您可以将简单的选择器组合成<a href="UIE-USS-Selectors-Complex.html">复杂的选择器</a>，或附加<a href="UIE-USS-Selectors-Pseudo-Classes.html">伪类</a>以将其定位到处于特定状态的元素。</p>
+
+<p><a name="selector-example"></a>
+本页面描述了每种类型的简单选择器并提供了语法和示例。它使用以下 UXML 文档来演示简单选择器如何匹配元素。</p>
+
+<pre><code class="lang-xml">&lt;UXML xmlns="UnityEngine.UIElements"&gt;
+  &lt;VisualElement name="container1"&gt;
+    &lt;VisualElement name="container2" class="yellow"&gt;
+      &lt;Button name="OK" class="yellow" text="OK" /&gt;
+      &lt;Button name="Cancel"class="" text="Cancel" /&gt;
+    &lt;/VisualElement&gt;
+  &lt;/VisualElement&gt;
+&lt;/UXML&gt;
+</code></pre>
+
+<p>在未应用任何样式的情况下，UXML 文档生成如下所示的 UI。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">示例图像包括边距和蓝色细边框，以帮助识别用于演示目的的各个元素。</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/uss-selectors-nostyle.png" alt="">
+</figure>
+
+<h2>C# 类型选择器</h2>
+
+<p>C# 类型选择器根据它们的 C# 类型匹配元素。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">USS 类型选择器类似于匹配 HTML 标签的 CSS 类型选择器。例如，USS 中的 <code>Button {...}</code> 匹配 C# <code>Button</code> 类型的任何元素，相当于 CSS 中的 <code>p {...}</code> 匹配任何 (<code>&lt;p&gt;</code>) 段落标签。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>语法：</strong></p>
+
+<p>C# 类型选择器是 C# 类型名称，按原样书写。</p>
+
+<pre><code class="lang-css">TypeName { ...}
+</code></pre>
+
+<p>编写 C# 类型选择器时，仅指定具体的对象类型。不要在类型名称中包含命名空间。</p>
+
+<p>例如，这个选择器是有效的：</p>
+
+<pre><code class="lang-css">Button { ...}
+</code></pre>
+
+<p>这个选择器是无效：</p>
+
+<pre><code class="lang-css">UnityEngine.UIElements.Button { ...}
+</code></pre>
+
+<p><strong>示例：</strong></p>
+
+<p>对于上面的<a href="#selector-example">示例 UXML 文档</a>，以下样式规则匹配两个 <code>Button</code> 元素。</p>
+
+<pre><code class="lang-css">Button {
+  border-radius: 8px;
+  width: 100px;
+  }
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/uss-selectors-csharp-type.png" alt="">
+</figure>
+
+<p><a name="name-selectors"></a></p>
+
+<h2>名称选择器</h2>
+
+<p>名称选择器根据指定的 <code>name</code> 属性的值匹配元素。</p>
+
+<ul>
+<li>在 C# 中，使用 <code>VisualElement.name</code> 设置元素的名称。</li>
+<li>在 UXML 中，可以为元素指定一个名称属性 <code>&lt;VisualElement name="my-nameName"&gt;</code>
+</li>
+</ul>
+
+<p>Unity 不强制任何名称约定，但您应该使面板内的元素名称唯一。使用非唯一名称可能会导致意外匹配。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">USS 名称选择器类似于匹配具有特定 <code>id</code> 属性的元素的 CSS ID 选择器。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>语法：</strong></p>
+
+<p>名称选择器由元素的指定名称和数值符号 (<code>#</code>) 前缀组成。</p>
+
+<pre><code class="lang-css"># name { ...}
+</code></pre>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">仅当您在 USS 文件中编写选择器时使用数值符号 #。为 UXML 或 C# 文件中的元素指定名称时不要使用它。包含数值符号的元素名称无效。<br><br>例如 <code>&lt;Button name="OK" /&gt;</code> 有效。<code>&lt;Button name="#OK" /&gt;</code> 无效。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>示例：</strong></p>
+
+<p>对于上面的<a href="#selector-example">示例 UXML 文档</a>，以下样式规则匹配第二个 <code>Button</code> 元素。</p>
+
+<pre><code class="lang-css"># Cancel {
+    border-width: 2px;
+    border-color: DarkRed;
+    background-color: pink;
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/uss-selectors-name.png" alt="">
+</figure>
+
+<p><a name="uss-class-selectors"></a></p>
+
+<h2>USS 类选择器</h2>
+
+<p>类选择器匹配指定了特定 USS 类的元素。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">类选择器在 USS 中的工作方式与在 CSS 中的工作方式相同。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>语法：</strong></p>
+
+<p>类选择器由类名和句点 (<code>.</code>) 前缀组成。类名不能以数字开头。</p>
+
+<pre><code class="lang-css">.class { ...}
+</code></pre>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">仅当您在 USS 文件中编写选择器时使用句点 (<code>.</code>) 。为 UXML 或 C# 文件中的元素指定类时不要包含它。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">例如，使用 <code>&lt;Button class="yellow" /&gt;</code> 而不是 <code>&lt;Button class=".yellow" /&gt;</code>。<br><br>还要避免在类名中使用句点。Unity 的 USS 解析器将句点解释为新类的开始。<br><br>例如，如果您创建一个名为 <code>yellow.button</code> 的类，并创建以下 USS 规则：<br><br><code>.yellow.button{...}</code> <br><br>解析器将选择器解释为<a href="UIE-USS-Selectors-Complex.html#multiple-selectors">多个选择器</a>，并尝试查找同时匹配 <code>.yellow</code> 类和 <code>.button</code> 类的元素。</td>
+</tr>
+</tbody>
+</table>
+
+<p>当一个元素指定了多个类时，选择器只需要匹配其中一个类来匹配元素。</p>
+
+<p>您还可以在选择器中指定多个类，在这种情况下，元素必须指定了所有这些类才能匹配。有关详细信息，请参阅<a href="UIE-USS-Selectors-Complex.html#multiple-selectors">多个选择器</a>。</p>
+
+<p><strong>示例：</strong></p>
+
+<p>对于上面的<a href="#selector-example">示例 UXML 文档</a>，下面的样式规则匹配名为 <em>container2</em> 的元素和名为 <em>OK</em> 的按钮元素，并将其背景颜色更改为黄色。</p>
+
+<pre><code class="lang-css">.yellow {
+    background-color: yellow;
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/uss-selectors-class.png" alt="">
+</figure>
+
+<h2>通用选择器</h2>
+
+<p>通用选择器（有时称为通配符选择器）匹配任何元素。</p>
+
+<p><strong>语法：</strong></p>
+
+<pre><code class="lang-css">* { ...}
+</code></pre>
+
+<p><strong>示例：</strong></p>
+
+<p>对于上面的<a href="#selector-example">示例 UXML 文档</a>，下面的样式规则匹配每个元素，并将其背景颜色更改为黄色。这包括窗口的主要区域，因为该样式表应用于窗口的根元素。
+<!-- XREF to root element --></p>
+
+<pre><code class="lang-css">* {
+    background-color: yellow;
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/uss-selectors-universal.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">因为它测试每个元素，所以通用选择器会影响性能。请谨慎使用。避免将通用选择器与后代选择器一起使用。当您使用该组合时，系统可能必须反复测试许多元素，这会影响性能。</td>
+</tr>
+</tbody>
+</table>
+
+<h3>在复杂选择器中使用通用选择器</h3>
+
+<p>您可以将通用选择器包含在<a href="UIE-USS-Selectors-Complex.html">复杂的选择器</a>中。例如，以下 USS 规则在<a href="UIE-USS-Selectors-Complex.html#child-selectors">子选择器</a>中使用了通用选择器，匹配 USS 类为 <code>yellow</code> 的元素的任何子元素下的任何按钮子元素：</p>
+
+<pre><code class="lang-css">.yellow &gt; * &gt; Button{..}
+</code></pre>
+
+<hr>
+<!-- area:authoring -->
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-USS-Selectors.html"></a></span><div class="tip">USS 选择器</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-USS-Selectors-Complex.html"></a></span><div class="tip">Complex Selectors</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>

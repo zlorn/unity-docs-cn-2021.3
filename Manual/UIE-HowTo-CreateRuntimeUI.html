@@ -1,0 +1,1071 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5V25JL6');
+    </script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Creating your first runtime UI - Unity 手册">
+<title>Creating your first runtime UI - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2021.3/uploads/Main/uie-howto-runtimeUI-finalMainView.png">
+<meta name="description" content="This page will guide you through the steps to set up a simple character selection screen using UI Toolkit. It covers the creation of the UI elements and templates, the scene setup, and how to connect scripting logic to the UI. This guide won&amp;#8217;t cover styling through USS, and use only default styles and theming.">
+<meta property="og:description" content="This page will guide you through the steps to set up a simple character selection screen using UI Toolkit. It covers the creation of the UI elements and templates, the scene setup, and how to connect scripting logic to the UI. This guide won&amp;#8217;t cover styling through USS, and use only default styles and theming.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836"></script><script type="text/javascript">
+        function OptanonWrapper() { }
+    </script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-HowTo-CreateRuntimeUI';
+      if(!page) page = 'index';
+      var version = '2021.3';
+      var docs_versions = [{version: '2022.1',version_string: '2022.1',supported: true},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: true},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: true},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/es/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="es">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/ru/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="ru">
+<link rel="alternate" href="https://docs.unity3d.com/2021.3/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html" hreflang="x-default">
+</head>
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5V25JL6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-HowTo-CreateRuntimeUI.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2021.3/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">日本語</a></li>
+<li><a data-lang="es" href="/es/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">Español</a></li>
+<li><a data-lang="kr" href="/kr/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">한국어</a></li>
+<li><a data-lang="ru" href="/ru/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">Русский</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2021.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2021.1</a></li>
+<li class="supported"><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2020.1</a></li>
+<li class="supported"><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-HowTo-CreateRuntimeUI.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-HowTo-CreateRuntimeUI.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2021.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-Getting-Started.html">Get started with UI Toolkit</a></li>
+<li>Creating your first runtime UI</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-HowTo-CreateCustomInspector.html"></a></span><div class="tip">Create a Custom Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-VisualTree.html"></a></span><div class="tip">视觉树</div>
+</div>
+</div></div>
+<h1>Creating your first runtime UI</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page will guide you through the steps to set up a simple character selection screen using UI Toolkit. It covers the creation of the UI elements and templates, the scene setup, and how to connect scripting logic to the UI. This guide won’t cover styling through USS, and use only default styles and theming.</p>
+
+<p>您可以在本页底部<a href="#finalCode">此处</a>找到本指南的最终源代码。</p>
+
+<p><strong>Topics covered:</strong> UI Builder, <a href="../ScriptReference/UIElements.ListView.html">ListView</a>, <a href="../ScriptReference/UIElements.Label.html">Label</a>, <a href="../ScriptReference/UIElements.PanelSettings.html">PanelSettings</a>, <a href="../ScriptReference/UIElements.UIDocument.html">UIDocument</a>, selection handling</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-finalMainView.png" alt="">
+</figure>
+
+<p>本指南将指导您完成以下步骤：</p>
+
+<ul>
+<li>Create the main UI view</li>
+<li>Setup the scene</li>
+<li>Create sample data to display</li>
+<li>Create a controller for the main view</li>
+<li>Create a list entry UI template</li>
+<li>Create a controller for a list entry</li>
+<li>React to user selection</li>
+</ul>
+
+<h2>Create the main UI view</h2>
+
+<p>The final UI screen is composed of two individual UI templates (UXML). The main view template contains the list with the character names, a smaller panel to display the selected character’s details, and a button. In this section you will set up this template using UI Builder.</p>
+
+<p><strong>Note</strong>: If you are familiar with UI Builder and want to skip this step, you can copy the UXML code for the <a href="#finalCode_mainView"><strong>main view</strong></a> from the bottom of this page and paste it into a new file directly. Save it as <strong>Assets/UI/MainView.uxml</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-mainView.png" alt="The UI layout setup for the main view">
+<figcaption>The UI layout setup for the main view</figcaption>
+</figure>
+
+<p>Open the UI Builder window via the menu <strong>Window &gt; UI Toolkit &gt; UI Builder</strong>. Create a new UXML document using the file menu at the top left of the viewport.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-fileMenu.png" alt="UI Builder file menu">
+<figcaption>UI Builder file menu</figcaption>
+</figure>
+
+<p>When developing game UI, always make sure to select the <code>Unity Default Runtime Theme</code> at the top right of the UI Builder’s viewport. Default font sizes and colors differ between Editor and Runtime themes and that affects your layout.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-UIBuilderTheme.png" alt="Create new elements by dragging from the Library">
+<figcaption>Create new elements by dragging from the Library</figcaption>
+</figure>
+
+<p>Select the new UXML file in the <strong>Hierarchy</strong> and enable the <strong>Match Game View</strong> checkbox. You might need to set your Unity Editor to a landscape resolution if you haven’t already.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-matchGameView.png" alt="Enabling Match Game View">
+<figcaption>Enabling Match Game View</figcaption>
+</figure>
+
+<p>Now it’s time to create UI elements!
+Create a new VisualElement by dragging it from the <strong>Library</strong> into the <strong>Hierarchy</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-newVisualElement.png" alt="Create new elements by dragging from the Library">
+<figcaption>Create new elements by dragging from the Library</figcaption>
+</figure>
+
+<p>The new element needs to cover the entire screen, so you need to set the <code>flex-grow</code> property to 1. Select the element from the hierarchy and find the foldout labeled <strong>Flex</strong> in the Inspector panel on the right. Change the value for <strong>Grow</strong> from 0 to 1.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-flexGrow.png" alt="Setting the Flex property">
+<figcaption>Setting the Flex property</figcaption>
+</figure>
+
+<p>To center all children of this VisualElement in the middle of the screen, change the <strong>Align</strong> properties of the VisualElement. You need to set both <strong>Align Items</strong> and <strong>Justify Content</strong> to <em>center</em>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-alignCenter.png" alt="Centering children">
+<figcaption>Centering children</figcaption>
+</figure>
+
+<p>Lastly, you can pick a background color under <strong>Background &gt; Color</strong>. This step is optional. This example uses <code>#732526</code> as the color.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-backgroundColor.png" alt="Root element background color">
+<figcaption>Root element background color</figcaption>
+</figure>
+
+<p>Next, create a new VisualElement underneath the existing one. This will become the parent container for the left and right sections of the UI.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-secondaryContainer.png" alt="Add a child VisualElement">
+<figcaption>Add a child VisualElement</figcaption>
+</figure>
+
+<p>Set the <code>flex-direction</code> property to <code>row</code> for this new element (it defaults to column). You also need to set a fixed height of 350 pixels.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-centerContainer.png" alt="Center container properties">
+<figcaption>Center container properties</figcaption>
+</figure>
+
+<p>This is what the current UI should look like. Note that your screen might look different depending on the resolution and aspect ratio of your <strong>Game View</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-intermediate01.png" alt="Background container with empty element inside">
+<figcaption>Background container with empty element inside</figcaption>
+</figure>
+
+<p>To create the list for the character names, select a <strong>ListView</strong> control from the <strong>Library</strong> and add it as a child underneath the VisualElement you just created. Select the element and assign it the name <code>CharacterList</code> in the inspector. This is necessary so you can access this list via the controller script later.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-setElementName.png" alt="Background container with empty element inside">
+<figcaption>Background container with empty element inside</figcaption>
+</figure>
+
+<p>Set the list to have a fixed width of 230 pixels. Also give it a 6 px wide margin on the right, to crate some distance to the next elements that you are going to create.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-sizeAndMargin.png" alt="Size and Margin foldouts for the character list">
+<figcaption>Size and Margin foldouts for the character list</figcaption>
+</figure>
+
+<p>You can also assign a background color and set a rounded border for the list. This guide uses <code>#6E3925</code> for the background and <code>#311A11</code> for the border color, with a 4px wide border and a 15px radius. This step is optional.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-characterListStyling.png" alt="Styled character list">
+<figcaption>Styled character list</figcaption>
+</figure>
+
+<p>Add a new VisualElement under the same parent as the <code>CharacterList</code>. This will hold the character details panel and the button. Under the <strong>Align</strong> foldout, change the setting for <strong>Align Items</strong> to <code>flex-end</code>, and <strong>Justify Content</strong> to <code>space-between</code>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-justifySpaceBetween.png" alt="Justify content property">
+<figcaption>Justify content property</figcaption>
+</figure>
+
+<p>Add a new VisualElement to this new container. This will become the character details panel. When the user selects a character from the list on the left, it will display the character’s portrait, name, and class.</p>
+
+<p>Set a fixed width of 276 pixels for the element, and switch <strong>Align Items</strong> and <strong>Justify Content</strong> to <em>center</em>. Also add an 8 pixels wide padding for the element, so that the children will keep a minimum distance to the borders of the container.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-characterDetailsProperties.png" alt="Properties of the charcter details container">
+<figcaption>Properties of the charcter details container</figcaption>
+</figure>
+
+<p>You can style the panel by setting a background color of <code>#AA5939</code> and a border color of <code>#311A11</code> with a 4px wide border and a 15px radius. This step is optional.</p>
+
+<p>Your UI layout should now look similar to the image below.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-intermediate02.png" alt="Empty character details panel">
+<figcaption>Empty character details panel</figcaption>
+</figure>
+
+<p>Next you’ll add the individual Ui controls to the character details. First is the character portrait. This consists of two elements - a frame in the background and an image in the foreground.</p>
+
+<p>Add a new VisualElement to the character details container for the background frame first. Assign it a fixed size of 120x120 pixels, and a padding of 4 pixels so that the contained image won’t directly touch the border.</p>
+
+<p>You can use a 2px-wide, 15px radius border with a color of <code>#311A11</code> and a background color of <code>#FF8554</code> to style the element. Feel free to apply your own colors and styling instead.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-pictureFrame.png" alt="Background frame for the character portrait">
+<figcaption>Background frame for the character portrait</figcaption>
+</figure>
+
+<p>For the actual image add a new VisualElement as a child to the frame you just created. Name it <code>CharacterPortrait</code> so that you can access it in the controller script later.</p>
+
+<p>Set <strong>Flex &gt; Grow</strong> to 1, so that the image makes use of all the available space. Also make sure to change the scaling mode under <strong>Background &gt; Scale Mode</strong> to <code>scale-to-fit</code>, so that the image can be scaled up or down to match the element size, while keeping the correct aspect ratio.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-portraitElement.png" alt="VisualElement for the portrait image">
+<figcaption>VisualElement for the portrait image</figcaption>
+</figure>
+
+<p>Next, add two label controls to the the character details container, which you will later use to display the selected character’s name and class. Name them <code>CharacterName</code> and <code>CharacterClass</code>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-characterLabels.png" alt="Add labels for name and class">
+<figcaption>Add labels for name and class</figcaption>
+</figure>
+
+<p>To make the character’s name stand out more than the class, change that label’s font size to 18, and set the style to <em>bold</em>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-labelSettings.png" alt="Change font settings">
+<figcaption>Change font settings</figcaption>
+</figure>
+
+<p>Your UI screen should now look similar to the image below.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-intermediate03.png" alt="Finished character details panel">
+<figcaption>Finished character details panel</figcaption>
+</figure>
+
+<p>Lastly, add a Button control to the right side UI container. You will later access this button in the controller script and enable or disable it when a character is selected or deselected. Name the button <code>SelectCharButton</code> and give it a fixed width of 150px. You should also set the label text of the button to <code>Select Character</code>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-selectButton.png" alt="Add button for character selection">
+<figcaption>Add button for character selection</figcaption>
+</figure>
+
+<p>To style the button, set a background color of <code>#FF8554</code>, and a 2px border with a color of <code>#311A11</code>. This step is optional.</p>
+
+<p>Your finished main view should look similar to the image below.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-finalMainView.png" alt="Final main view layout">
+<figcaption>Final main view layout</figcaption>
+</figure>
+
+<p>Save the UXML template as <strong>Assets/UI/MainView.uxml</strong>.
+You can also find the final UXML code for this template at the bottom of the page <a href="#finalCode_mainView">here</a>.</p>
+
+<h2>Setup the scene</h2>
+
+<p>In this section you will learn how to load and display the UI template you created in the previous section in your game at runtime.</p>
+
+<p>To start you need to create a <a href="../ScriptReference/UIElements.PanelSettings.html">PanelSettings</a> asset. This asset will define the settings of your screen, such as scaling mode and rendering order. It will also determine the name under which your UI will appear in the UI Toolkit Debugger.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-newPanelSettings.png" alt="Create a new panel settings asset">
+<figcaption>Create a new panel settings asset</figcaption>
+</figure>
+
+<p>Create a new <code>Panel Settings Asset</code> by right-clicking in the project view. Choose <strong>Create &gt; UI Toolkit &gt; Panel Settings Asset</strong>. Name the newly created file <code>GameUI_Panel</code>.
+For this guide you can leave all settings at their default values.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-PanelSettingsDefaults.png" alt="No need to change the default PanelSettings">
+<figcaption>No need to change the default PanelSettings</figcaption>
+</figure>
+
+<p>To display the main view UI template from the previous section you need to create a new GameObject in the scene. Attach a <a href="../ScriptReference/UIElements.UIDocument.html">UIDocument</a> component to it.</p>
+
+<p>The <code>UIDocument</code> will automatically load the assigned <code>VisualTreeAsset</code> when entering Play mode in Unity. A <code>VisualTreeAsset</code> is a UXML template. Assign both the <code>MainView.uxml</code> and the new <code>GameUI_Panel</code> panel settings to the component.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-UIDocument.png" alt="The UI Document component">
+<figcaption>The UI Document component</figcaption>
+</figure>
+
+<p><strong>Note</strong>: If you do not assign a <code>PanelSettings</code> asset to your UI Document component, it will automatically search the project and use the first Panel Settings Asset it finds automatically. Keep this in mind when renaming or moving assets.</p>
+
+<p>You can now enter Play mode in the Unity Editor and see your UI displayed in the game view.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-playModeFirstLook.png" alt="UI displayed at runtime">
+<figcaption>UI displayed at runtime</figcaption>
+</figure>
+
+<p><strong>Note</strong>: If you have multiple UI Documents in your scene, you can assign the same panel settings asset to all. This will cause all UI to be rendered on the same panel, optimizing performance.</p>
+
+<h2>Create sample data to display</h2>
+
+<p>In this section you will create some sample data that will be used to fill the character list in the UI with data.</p>
+
+<p>For the character list you need a simple class that holds a character name, class, and a portrait image.
+Create a new ScriptableObject script <strong>Assets/Scripts/CharacterData.cs</strong> and paste the following code into the file:</p>
+
+<pre><code class="lang-csharp">using UnityEngine;
+
+public enum ECharacterClass
+{
+    Knight, Ranger, Wizard
+}
+
+[CreateAssetMenu]
+public class CharacterData : ScriptableObject
+{
+    public string m_CharacterName;
+    public ECharacterClass m_Class;
+    public Sprite m_PortraitImage;
+}
+</code></pre>
+
+<p>The <code>[CreateAssetMenu]</code> attribute will automatically add an entry to the <strong>Create</strong> menu.
+Right-click into a folder in the Project view to create instances of the new ScriptableObject.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-createCharacterData.png" alt="New Create menu entry">
+<figcaption>New Create menu entry</figcaption>
+</figure>
+
+<p>Now you need to create a few <code>CharacterData</code> instances and fill them with random data. Place all of them in a folder <strong>Resources/Characters</strong>. You will write a script which automatically parses and loads all character data from this folder later.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-characterDataProperties.png" alt="Create a few sample characters">
+<figcaption>Create a few sample characters</figcaption>
+</figure>
+
+<h2>Create a list entry UI template</h2>
+
+<p>In this section you will create a UI template for the individual entries in the list. At runtime, a controller script will create an instance of this UI for each character and add it to the list.
+The UI for a character list entry consists of acolored background frame and the character name.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-listEntryFinal.png" alt="List entry showing the character name">
+<figcaption>List entry showing the character name</figcaption>
+</figure>
+
+<p><strong>Note</strong>: If you want to skip this step, you can copy the UXML code for the <a href="#finalCode_listEntry"><strong>list entry</strong></a> from the bottom of this page and paste it into a new file directly. Save it as <strong>Assets/UI/ListEntry.uxml</strong>.</p>
+
+<p>Open the UI Builder window via the menu <strong>Window &gt; UI Toolkit &gt; UI Builder</strong>.
+Create a new UXML template by selecting <strong>File &gt; New</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-fileMenu.png" alt="Create a new UXML template in UI Builder">
+<figcaption>Create a new UXML template in UI Builder</figcaption>
+</figure>
+
+<p>Add a VisualElement for the background, and set a fixed heigth of 41px. Since the text inside the entry should be left aligned and placed in the middle of the element, open the <strong>Align</strong> foldout and set <strong>Align Items</strong> to <em>left</em>, and <strong>Justify Content</strong> to <em>center</em>.
+Also set a left padding of 10px, to make the label have a minimum distance to the left border of the frame.</p>
+
+<p>For the styling, you can use <code>#AA5939</code> for the background color and add a 2px wide border, with a 15px radius and a color of <code>#311A11</code>. This step is optional and you can apply your own colors and styling.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-listEntryBackground.png" alt="The background VisualElement">
+<figcaption>The background VisualElement</figcaption>
+</figure>
+
+<p>Add a label as a child to the existing VisualElement and name it <code>CharacterName</code>, so that you can access it later in the controller script. Set the <strong>Font Style</strong> to <em>bold</em> and the font size to 18.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-listEntryLabel.png" alt="Add label for the characters name">
+<figcaption>Add label for the character’s name</figcaption>
+</figure>
+
+<p>Save the UXML template as <strong>Assets/UI/ListEntry.uxml</strong>.
+You can also find the final UXML code for this template at the bottom of the page <a href="#finalCode_listEntry">here</a>.</p>
+
+<h2>Create a controller for a list entry</h2>
+
+<p>In this section you will create a controller script for a list entry. The purpose of the script is to display the data of a character instance in the UI of the list entry. It needs to access the label for the character name and set it to display the name of the given character instance.</p>
+
+<p>Create a new script <strong>Assets/Scripts/UI/CharacterListEntryController.cs</strong> and paste the following code into it:</p>
+
+<pre><code class="lang-csharp">using UnityEngine.UIElements;
+
+public class CharacterListEntryController
+{
+    Label m_NameLabel;
+
+    public void SetVisualElement(VisualElement visualElement)
+    {
+        m_NameLabel = visualElement.Q&lt;Label&gt;("CharacterName");
+    }
+
+    public void SetCharacterData(CharacterData characterData)
+    {
+        m_NameLabel.text = characterData.m_CharacterName;
+    }
+}
+</code></pre>
+
+<p>There are two functions in this class, and both of them are <code>Set</code> functions.</p>
+
+<p><code>SetVisualElement(VisualElement visualElement)</code>
+This function will receive a visual element that is an instance of the <code>ListEntry</code> UI template you created in the previous section. The main view controller will create this instance. The purpose of this function is to retrieve a reference to the character name label inside the UI element.</p>
+
+<p><code>SetCharacterData(CharacterData characterData)</code>
+This function receives the character whose name this list element is supposed to display. Because the elements list in a <code>ListView</code> are pooled and reused, it’s necessary to have a <code>Set</code> function to change which character’s data to display.</p>
+
+<p>Note that the <code>CharacterListEntry</code> class is not a <code>MonoBehaviour</code>. Since the visual elements in UI Toolkit aren’t GameObjects, you can’t attach components to them. Instead, this class will be attached to the <code>userData</code> property in the next section.</p>
+
+<h2>Create a controller for the main view</h2>
+
+<p>In this section you will create a controller script for the character list in the main view, and a MonoBehaviour script that instantiates and assignes it to the visual tree.</p>
+
+<p>To start, create a new script under <strong>Assets/Scripts/UI/CharacterListController.cs</strong> and paste the following code into it.</p>
+
+<pre><code class="lang-csharp">using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class CharacterListController
+{
+    public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
+    {
+    }
+}
+</code></pre>
+
+<p>You’re going to fill in the <code>InitializeCharacterList()</code> method late on, but it’s important to add the empty method now, so that you can call it in the next section.</p>
+
+<p><strong>Attach the controller script to the main view</strong></p>
+
+<p>Just like the <code>CharacterListEntryController</code>, the <code>CharacterListController</code> is not a <code>MonoBehaviour</code>, and needs to be attached to the visual tree in a different manner.
+You need to create a MonoBehaviour script that you can attach to the same GameObject as the <code>UIDocument</code>. It will instantiate the <code>CharacterListController</code> and attach it to the Visual Tree.</p>
+
+<p>Create a new script <strong>Assets/Scripts/UI/MainView.cs</strong> and paste the following code into it:</p>
+
+<pre><code class="lang-csharp">using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MainView : MonoBehaviour
+{
+    [SerializeField]
+    VisualTreeAsset m_ListEntryTemplate;
+
+    void OnEnable()
+    {
+        // The UXML is already instantiated by the UIDocument component
+        var uiDocument = GetComponent&lt;UIDocument&gt;();
+
+        // Initialize the character list controller
+        var characterListController = new CharacterListController();
+        characterListController.InitializeCharacterList(uiDocument.rootVisualElement, m_ListEntryTemplate);
+    }
+}
+</code></pre>
+
+<p>Go into the Unity Editor and attach the script to the same GameObject that the <code>UIDocument</code> is on. Assign the <code>ListEntry.uxml</code> to the <strong>List Entry Template</strong> property.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-assignListEntry.png" alt="Add main view script and assign reference">
+<figcaption>Add main view script and assign reference</figcaption>
+</figure>
+
+<p>There’s no need for your script component to instantiate the MainView UXML, as this is done automatically in the <code>UIDocument</code> component on the same GameObject. The <code>MainView</code> script accesses the UIDocument component to get a reference of the already instantiated Visual Tree. It then creates an instance of the <code>CharacterListController</code> and passes in the root element of the visual tree and the UXML template used for the individual list elements.</p>
+
+<p><strong>Note</strong>: When the UI is reloaded, companion MonoBehaviour components on the same GameObject containing the <code>UIDocument</code> component will be disabled prior to the reload, and then re-enabled after the reload. Therefore it’s a good practice to place code that interacts with the UI in the <code>OnEnable</code> and <code>OnDisable</code> methods of these MonoBehaviours.</p>
+
+<p><strong>Enumerate all character data instances</strong></p>
+
+<p>The first functionality you should add to the controller script is a function that enumerates all the character data instances you created earlier. These will be used to fill the list.</p>
+
+<p>Copy the code below into the <code>CharacterListController</code> class.</p>
+
+<pre><code class="lang-csharp">List&lt;CharacterData&gt; m_AllCharacters;
+
+void EnumerateAllCharacters()
+{
+    m_AllCharacters = new List&lt;CharacterData&gt;();
+    m_AllCharacters.AddRange(Resources.LoadAll&lt;CharacterData&gt;("Characters"));
+}
+</code></pre>
+
+<p><strong>Note</strong>: This code assumes that you created the character instances in the <strong>Resources/Characters</strong> folder. You might need to adjust the folder name accordingly if you placed the characters in a different folder.</p>
+
+<p>Now you need to call the <code>EnumerateAllCharacter</code> method during initialization. Add a call to it to the top of the <code>InitializeCharacterList</code> method:</p>
+
+<pre><code class="lang-csharp">public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
+{
+    EnumerateAllCharacters();
+}
+</code></pre>
+
+<p><strong>Get references to the UI elements</strong></p>
+
+<p>In this section you will fill in the content of the <code>InitializeCharacterList</code> method. The first thing this method needs to do is obtain references to all the individual UI controls it needs to access to display information. Use the <a href="UIE-UQuery.html">UQuery</a> family of APIs to retrieve individual UI controls by name, USS class, type, or a combination of these.</p>
+
+<p>Extend the code inside the <code>CharacterListController</code> class with the code below:</p>
+
+<pre><code class="lang-csharp">// UXML template for list entries
+VisualTreeAsset m_ListEntryTemplate;
+
+// UI element references
+ListView m_CharacterList;
+Label m_CharClassLabel;
+Label m_CharNameLabel;
+VisualElement m_CharPortrait;
+Button m_SelectCharButton;
+
+public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
+{
+    EnumerateAllCharacters();
+
+    // Store a reference to the template for the list entries
+    m_ListEntryTemplate = listElementTemplate;
+
+    // Store a reference to the character list element
+    m_CharacterList = root.Q&lt;ListView&gt;("CharacterList");
+
+    // Store references to the selected character info elements
+    m_CharClassLabel = root.Q&lt;Label&gt;("CharacterClass");
+    m_CharNameLabel = root.Q&lt;Label&gt;("CharacterName");
+    m_CharPortrait = root.Q&lt;VisualElement&gt;("CharacterPortrait");
+
+    // Store a reference to the select button
+    m_SelectCharButton = root.Q&lt;Button&gt;("SelectCharButton");
+}
+</code></pre>
+
+<p><strong>Fill the list with entries</strong></p>
+
+<p>Next you need to fill the list on the screen with the characters you enumerated and loaded earlier. To do so you need to create a new method <code>FillCharacterList</code> inside the <code>CharacterListController</code> class.</p>
+
+<p>Filling a <a href="../ScriptReference/UIElements.ListView.html">ListView</a> with elements takes 4 steps:</p>
+
+<ol>
+<li>Create a <code>makeItem</code> function</li>
+<li>Create a <code>bindItem</code> function</li>
+<li>Set the item height</li>
+<li>Set the item source</li>
+</ol>
+
+<p>The purpose of a <a href="../ScriptReference/UIElements.BaseVerticalCollectionView-makeItem.html">makeItem</a> callback function is to create a small visual tree representing the UI a single list item, and returning the root VisualElement of this tree.</p>
+
+<p>In this case, the <code>makeItem</code> callback needs to instantiate the UXML template you created for the list entries. It also needs to create an instance of the <code>CharacterListEntryController</code> controller script, which takes care of filling the UI with the data from the <code>CharacterData</code>.</p>
+
+<p>Create a <code>FillCharacterList</code> method inside the class and paste the code below.</p>
+
+<pre><code class="lang-csharp">void FillCharacterList()
+{
+    // Set up a make item function for a list entry
+    m_CharacterList.makeItem = () =&gt;
+    {
+        // Instantiate the UXML template for the entry
+        var newListEntry = m_ListEntryTemplate.Instantiate();
+
+        // Instantiate a controller for the data
+        var newListEntryLogic = new CharacterListEntryController();
+
+        // Assign the controller script to the visual element
+        newListEntry.userData = newListEntryLogic;
+    
+        // Initialize the controller script
+        newListEntryLogic.SetVisualElement(newListEntry);
+
+        // Return the root of the instantiated visual tree
+        return newListEntry;
+    };
+}
+</code></pre>
+
+<p>As part of the <code>makeItem</code> callback, you’re storing the controller script inside the <code>userData</code> property of the instantiated visual element. This allows you to access the script at a later time and assign different characters to the list element.</p>
+
+<pre><code class="lang-csharp">// Assign the controller script to the visual element
+newListEntry.userData = newListEntryLogic;
+</code></pre>
+
+<p>As a memory and performance optimization, a <code>ListView</code> reuses list elements instead of instantiating one element for every entry in the list. It creates only enough visual elements to fill the visible area, and then pools and reuses them as the list is scrolled.</p>
+
+<p>For this reason you need to provide a <a href="../ScriptReference/UIElements.BaseVerticalCollectionView-bindItem.html">bindItem</a> callback which binds an instance of your data (in this case <code>CharacterData</code>) to an individual list element.</p>
+
+<p>Extend the <code>FillCharacterList</code> method by adding the code below at the bottom.</p>
+
+<pre><code class="lang-csharp">// Set up bind function for a specific list entry
+m_CharacterList.bindItem = (item, index) =&gt;
+{
+    (item.userData as CharacterListEntryController).SetCharacterData(m_AllCharacters[index]);
+};
+</code></pre>
+
+<p>The <code>bindItem</code> callback receives a reference to the root visual element for the visual tree of the list entry, and an index for the data. Because you stored a reference to the <code>CharacterListEntryController</code> in the <code>userData</code> property of the visual element, the code can access it and directly set the <code>CharacterData</code>.</p>
+
+<p>Lastly you need to set the item height of the element and provide a reference to the data source for the list. This tells the list how many elements it contains.</p>
+
+<p>Extend the <code>FillCharacterList</code> method by adding the code below at the bottom.</p>
+
+<pre><code class="lang-csharp">// Set a fixed item height
+m_CharacterList.fixedItemHeight = 45;
+
+// Set the actual item's source list/array
+m_CharacterList.itemsSource = m_AllCharacters;
+</code></pre>
+
+<p>Finally, you need to call the <code>FillCharacterList</code> method at the end of initialization.
+Add a call to the bottom of the <code>InitializeCharacterList</code> method as shown below:</p>
+
+<pre><code class="lang-csharp">FillCharacterList();
+</code></pre>
+
+<p>If you enter <strong>Play Mode</strong> now, the character list will fill up with the names of the characters you created.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-playModeListView.png" alt="The character list is no longer empty">
+<figcaption>The character list is no longer empty</figcaption>
+</figure>
+
+<p>You can find the final code for the <code>CharacterListController</code> script at the bottom of this guide, <strong><a href="#finalCode_characterListController">here</a></strong></p>
+
+<h2>React to user selection</h2>
+
+<p>When the user selects a character, the character’s details - namely portrait, full name and class - need to be displayed in the character details section on the right side of the screen. Also, when a character is selected, the selection button needs to be enabled. When no character is selected, the button should disable again.</p>
+
+<p>Note that you can already click and select characters in your list. The functionality for selection and highlighting are part of the <a href="../ScriptReference/UIElements.ListView.html">ListView</a> control. All you need to add is a callback function to react when a user changes the selection in the list. The <code>ListView</code> control contains an <code>onSelectionChange</code> event for this purpose:</p>
+
+<p>Add the following code to the bottom of the <code>InitializeCharacterList</code> method:</p>
+
+<pre><code class="lang-csharp">// Register to get a callback when an item is selected
+m_CharacterList.onSelectionChange += OnCharacterSelected;
+</code></pre>
+
+<p>Now you need to implement the callback function <code>OnCharacterSelected</code> that you set up in the code above. This function will receive a list of all selected items in the list. However, because you list only allows single item selection, you can access the selected item directly through the list’s <a href="../ScriptReference/UIElements.BaseVerticalCollectionView-selectedItem.html">selectedItem</a> property.</p>
+
+<p>Copy the code below into your class:</p>
+
+<pre><code class="lang-chsarp">void OnCharacterSelected(IEnumerable&lt;object&gt; selectedItems)
+{
+    // Get the currently selected item directly from the ListView
+    var selectedCharacter = m_CharacterList.selectedItem as CharacterData;
+}
+</code></pre>
+
+<p>The <code>selectedItem</code> property could return null. This is the case if nothing is selected, or the user presses the <code>ESC</code> key to deselect everything. This case needs to be handled first. </p>
+
+<p>Extend the <code>OnCharacterSelected</code> method as shown below:</p>
+
+<pre><code class="lang-csharp">void OnCharacterSelected(IEnumerable&lt;object&gt; selectedItems)
+{
+    // Get the currently selected item directly from the ListView
+    var selectedCharacter = m_CharacterList.selectedItem as CharacterData;
+
+    // Handle none-selection (Escape to deselect everything)
+    if (selectedCharacter == null)
+    {
+        // Clear
+        m_CharClassLabel.text = "";
+        m_CharNameLabel.text = "";
+        m_CharPortrait.style.backgroundImage = null;
+
+        // Disable the select button
+        m_SelectCharButton.SetEnabled(false);
+
+        return;
+    }
+}
+</code></pre>
+
+<p>If the selection is valid, you need to display the character’s details in the UI. You can access to the labels and the portrait image visual elements via the references you retrieved in the <code>InitializeCharacterList</code> method of your class.</p>
+
+<p>Copy the code below into the <code>OnCharacterSelected</code> method:</p>
+
+<pre><code class="lang-csharp">// Fill in character details
+m_CharClassLabel.text = selectedCharacter.m_Class.ToString();
+m_CharNameLabel.text = selectedCharacter.m_CharacterName;
+m_CharPortrait.style.backgroundImage = new StyleBackground(selectedCharacter.m_PortraitImage);
+
+// Enable the select button
+m_SelectCharButton.SetEnabled(true);
+</code></pre>
+
+<p>You can now enter <strong>Play Mode</strong> and see your character selection list in action. Press the <code>Escape</code> key to deselect a character.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-final.png" alt="Final runtime UI">
+<figcaption>Final runtime UI</figcaption>
+</figure>
+
+<h2>
+<a name="finalCode"></a>Final scripts</h2>
+
+<p>Below you can find the full source code for all files created in this guide.</p>
+
+<h3>
+<a name="finalCode_mainView"></a>MainView.uxml</h3>
+
+<pre><code class="lang-uxml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(115, 37, 38);"&gt;
+        &lt;ui:VisualElement style="flex-direction: row; height: 350px;"&gt;
+            &lt;ui:ListView focusable="true" name="CharacterList" style="width: 230px; border-left-color: rgb(49, 26, 17); border-right-color: rgb(49, 26, 17); border-top-color: rgb(49, 26, 17); border-bottom-color: rgb(49, 26, 17); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; background-color: rgb(110, 57, 37); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; margin-right: 6px;" /&gt;
+            &lt;ui:VisualElement style="justify-content: space-between; align-items: flex-end;"&gt;
+                &lt;ui:VisualElement style="align-items: center; background-color: rgb(170, 89, 57); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; border-left-color: rgb(49, 26, 17); border-right-color: rgb(49, 26, 17); border-top-color: rgb(49, 26, 17); border-bottom-color: rgb(49, 26, 17); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; width: 276px; justify-content: center; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px;"&gt;
+                    &lt;ui:VisualElement style="border-left-color: rgb(49, 26, 17); border-right-color: rgb(49, 26, 17); border-top-color: rgb(49, 26, 17); border-bottom-color: rgb(49, 26, 17); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; height: 120px; width: 120px; border-top-left-radius: 13px; border-bottom-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; background-color: rgb(255, 133, 84);"&gt;
+                        &lt;ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; -unity-background-scale-mode: scale-to-fit;" /&gt;
+                    &lt;/ui:VisualElement&gt;
+                    &lt;ui:Label text="Label" name="CharacterName" style="-unity-font-style: bold; font-size: 18px;" /&gt;
+                    &lt;ui:Label text="Label" display-tooltip-when-elided="true" name="CharacterClass" style="margin-top: 2px; margin-bottom: 8px; padding-top: 0; padding-bottom: 0;" /&gt;
+                &lt;/ui:VisualElement&gt;
+                &lt;ui:Button text="Select Character" display-tooltip-when-elided="true" name="SelectCharButton" style="width: 150px; border-left-color: rgb(49, 26, 17); border-right-color: rgb(49, 26, 17); border-top-color: rgb(49, 26, 17); border-bottom-color: rgb(49, 26, 17); background-color: rgb(255, 133, 84); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" /&gt;
+            &lt;/ui:VisualElement&gt;
+        &lt;/ui:VisualElement&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>
+<a name="finalCode_listEntry"></a>ListEntry.uxml</h3>
+
+<pre><code class="lang-uxml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;ui:VisualElement style="height: 41px; align-items: flex-start; justify-content: center; padding-left: 10px; background-color: rgba(170, 89, 57, 255); border-left-color: rgba(49, 26, 17, 255); border-right-color: rgba(49, 26, 17, 255); border-top-color: rgba(49, 26, 17, 255); border-bottom-color: rgba(49, 26, 17, 255); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;"&gt;
+        &lt;ui:Label text="Label" display-tooltip-when-elided="true" name="CharacterName" style="-unity-font-style: bold; font-size: 18px;" /&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>CharacterData.cs</h3>
+
+<pre><code class="lang-csharp">using UnityEngine;
+
+public enum ECharacterClass
+{
+    Knight, Ranger, Wizard
+}
+
+[CreateAssetMenu]
+public class CharacterData : ScriptableObject
+{
+    public string m_CharacterName;
+    public ECharacterClass m_Class;
+    public Sprite m_PortraitImage;
+}
+</code></pre>
+
+<h3>CharacterListEntryController.cs</h3>
+
+<pre><code class="lang-csharp">using UnityEngine.UIElements;
+
+public class CharacterListEntryController
+{
+    Label m_NameLabel;
+
+    public void SetVisualElement(VisualElement visualElement)
+    {
+        m_NameLabel = visualElement.Q&lt;Label&gt;("CharacterName");
+    }
+
+    public void SetCharacterData(CharacterData characterData)
+    {
+        m_NameLabel.text = characterData.m_CharacterName;
+    }
+}
+</code></pre>
+
+<h3>MainView.cs</h3>
+
+<pre><code class="lang-csharp">using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MainView : MonoBehaviour
+{
+    [SerializeField]
+    VisualTreeAsset m_ListEntryTemplate;
+
+    void OnEnable()
+    {
+        // The UXML is already instantiated by the UIDocument component
+        var uiDocument = GetComponent&lt;UIDocument&gt;();
+
+        // Initialize the character list controller
+        var characterListController = new CharacterListController();
+        characterListController.InitializeCharacterList(uiDocument.rootVisualElement, m_ListEntryTemplate);
+    }
+}
+</code></pre>
+
+<h3>
+<a name="finalCode_characterListController"></a>CharacterListController.cs</h3>
+
+<pre><code class="lang-csharp">using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class CharacterListController
+{
+    // UXML template for list entries
+    VisualTreeAsset m_ListEntryTemplate;
+
+    // UI element references
+    ListView m_CharacterList;
+    Label m_CharClassLabel;
+    Label m_CharNameLabel;
+    VisualElement m_CharPortrait;
+    Button m_SelectCharButton;
+
+    public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
+    {
+        EnumerateAllCharacters();
+
+        // Store a reference to the template for the list entries
+        m_ListEntryTemplate = listElementTemplate;
+
+        // Store a reference to the character list element
+        m_CharacterList = root.Q&lt;ListView&gt;("CharacterList");
+
+        // Store references to the selected character info elements
+        m_CharClassLabel = root.Q&lt;Label&gt;("CharacterClass");
+        m_CharNameLabel = root.Q&lt;Label&gt;("CharacterName");
+        m_CharPortrait = root.Q&lt;VisualElement&gt;("CharacterPortrait");
+
+        // Store a reference to the select button
+        m_SelectCharButton = root.Q&lt;Button&gt;("SelectCharButton");
+
+        FillCharacterList();
+
+        // Register to get a callback when an item is selected
+        m_CharacterList.onSelectionChange += OnCharacterSelected;
+    }
+
+    List&lt;CharacterData&gt; m_AllCharacters;
+
+    void EnumerateAllCharacters()
+    {
+        m_AllCharacters = new List&lt;CharacterData&gt;();
+        m_AllCharacters.AddRange(Resources.LoadAll&lt;CharacterData&gt;("Characters"));
+    }
+
+    void FillCharacterList()
+    {
+        // Set up a make item function for a list entry
+        m_CharacterList.makeItem = () =&gt;
+        {
+            // Instantiate the UXML template for the entry
+            var newListEntry = m_ListEntryTemplate.Instantiate();
+
+            // Instantiate a controller for the data
+            var newListEntryLogic = new CharacterListEntryController();
+
+            // Assign the controller script to the visual element
+            newListEntry.userData = newListEntryLogic;
+
+            // Initialize the controller script
+            newListEntryLogic.SetVisualElement(newListEntry);
+
+            // Return the root of the instantiated visual tree
+            return newListEntry;
+        };
+
+        // Set up bind function for a specific list entry
+        m_CharacterList.bindItem = (item, index) =&gt;
+        {
+            (item.userData as CharacterListEntryController).SetCharacterData(m_AllCharacters[index]);
+        };
+
+        // Set a fixed item height
+        m_CharacterList.fixedItemHeight = 45;
+
+        // Set the actual item's source list/array
+        m_CharacterList.itemsSource = m_AllCharacters;
+    }
+
+    void OnCharacterSelected(IEnumerable&lt;object&gt; selectedItems)
+    {
+        // Get the currently selected item directly from the ListView
+        var selectedCharacter = m_CharacterList.selectedItem as CharacterData;
+
+        // Handle none-selection (Escape to deselect everything)
+        if (selectedCharacter == null)
+        {
+            // Clear
+            m_CharClassLabel.text = "";
+            m_CharNameLabel.text = "";
+            m_CharPortrait.style.backgroundImage = null;
+
+            // Disable the select button
+            m_SelectCharButton.SetEnabled(false);
+
+            return;
+        }
+
+        // Fill in character details
+        m_CharClassLabel.text = selectedCharacter.m_Class.ToString();
+        m_CharNameLabel.text = selectedCharacter.m_CharacterName;
+        m_CharPortrait.style.backgroundImage = new StyleBackground(selectedCharacter.m_PortraitImage);
+
+        // Enable the select button
+        m_SelectCharButton.SetEnabled(true);
+    }
+}
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-HowTo-CreateCustomInspector.html"></a></span><div class="tip">Create a Custom Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-VisualTree.html"></a></span><div class="tip">视觉树</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2021.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a>
+</div>
+</div>
+<div></div>
+</div>
+</div></div></div>
+</div>
+</body>
+</html>
